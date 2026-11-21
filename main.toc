@@ -1,0 +1,119 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{PHẦN MỞ ĐẦU}{6}{chapter*.2}%
+\contentsline {section}{\numberline {I}Lý do chọn đề tài}{6}{section.0.1}%
+\contentsline {section}{\numberline {II}Mục tiêu đề tài}{6}{section.0.2}%
+\contentsline {subsection}{\numberline {1}Mục tiêu tổng quát}{6}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2}Mục tiêu cụ thể}{7}{subsection.0.2.2}%
+\contentsline {section}{\numberline {III}Đối tượng và phạm vi nghiên cứu}{7}{section.0.3}%
+\contentsline {subsection}{\numberline {1}Đối tượng nghiên cứu}{7}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {2}Phạm vi nghiên cứu}{8}{subsection.0.3.2}%
+\contentsline {section}{\numberline {IV}Phương pháp nghiên cứu}{8}{section.0.4}%
+\contentsline {section}{\numberline {V}Ý nghĩa của đề tài}{8}{section.0.5}%
+\contentsline {chapter}{\numberline {1}CƠ SỞ LÝ THUYẾT}{9}{chapter.1}%
+\contentsline {section}{\numberline {I}Tổng quan về thương mại điện tử}{9}{section.1.1}%
+\contentsline {subsection}{\numberline {1}Khái niệm và đặc điểm thương mại điện tử}{9}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {2}Mô hình thương mại điện tử B2C}{9}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {3}Ứng dụng trí tuệ nhân tạo trong thương mại điện tử}{9}{subsection.1.1.3}%
+\contentsline {section}{\numberline {II}Biểu diễn và truy xuất dữ liệu bằng vector}{10}{section.1.2}%
+\contentsline {subsection}{\numberline {1}Khái niệm Embedding}{10}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {2}Text Embedding và Image Embedding}{11}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {3}Độ tương đồng Cosine và chuẩn hóa L2}{11}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {4}Tìm kiếm láng giềng gần nhất và HNSW}{11}{subsection.1.2.4}%
+\contentsline {section}{\numberline {III}Mô hình ngôn ngữ lớn và kỹ thuật RAG}{12}{section.1.3}%
+\contentsline {subsection}{\numberline {1}Mô hình ngôn ngữ lớn (LLM)}{12}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {2}Kỹ thuật RAG và tiền xử lý dữ liệu}{13}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {3}Truy xuất thông tin và Hybrid Search}{13}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {4}Reranking và sinh câu trả lời}{14}{subsection.1.3.4}%
+\contentsline {section}{\numberline {IV}Thị giác máy tính và tìm kiếm hình ảnh}{15}{section.1.4}%
+\contentsline {subsection}{\numberline {1}Tìm kiếm hình ảnh dựa trên nội dung (CBIR)}{15}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {2}Mô hình SigLIP}{15}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {3}Trích xuất đặc trưng và truy xuất hình ảnh tương đồng}{16}{subsection.1.4.3}%
+\contentsline {section}{\numberline {V}Hệ thống gợi ý và cá nhân hóa sản phẩm}{17}{section.1.5}%
+\contentsline {subsection}{\numberline {1}Tổng quan về hệ thống gợi ý}{17}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {2}Phân tích hành vi và xây dựng hồ sơ sở thích}{17}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {3}Xếp hạng sản phẩm đa tiêu chí}{18}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {4}Bài toán Cold Start}{18}{subsection.1.5.4}%
+\contentsline {chapter}{\numberline {2}PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}{20}{chapter.2}%
+\contentsline {section}{\numberline {I}Phân tích yêu cầu hệ thống}{20}{section.2.1}%
+\contentsline {subsection}{\numberline {1}Mô tả bài toán}{20}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2}Xác định các tác nhân của hệ thống}{20}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {3}Yêu cầu chức năng}{21}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {4}Yêu cầu phi chức năng}{21}{subsection.2.1.4}%
+\contentsline {section}{\numberline {II}Phân tích chức năng hệ thống}{22}{section.2.2}%
+\contentsline {subsection}{\numberline {1}Sơ đồ phân rã chức năng hệ thống}{22}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2}Sơ đồ Use Case tổng quát}{22}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {3}Phân tích chức năng xác thực và quản lý tài khoản}{23}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {4}Phân tích chức năng duyệt và khám phá sản phẩm}{24}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {5}Phân tích chức năng dịch vụ trí tuệ nhân tạo}{25}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {6}Phân tích chức năng tương tác và so sánh sản phẩm}{26}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {7}Phân tích chức năng giỏ hàng và thanh toán}{27}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {8}Phân tích chức năng tin tức và bài viết}{27}{subsection.2.2.8}%
+\contentsline {subsection}{\numberline {9}Phân tích chức năng quản trị hệ thống}{28}{subsection.2.2.9}%
+\contentsline {section}{\numberline {III}Thiết kế kiến trúc hệ thống}{29}{section.2.3}%
+\contentsline {subsection}{\numberline {1}Kiến trúc tổng thể hệ thống}{30}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2}Thiết kế tầng giao diện người dùng}{31}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {3}Thiết kế tầng xử lý nghiệp vụ}{31}{subsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {3.1}Tổ chức các lớp xử lý}{32}{subsubsection.2.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.2}Quản lý xác thực và phân quyền}{32}{subsubsection.2.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3}Phối hợp xử lý với dịch vụ AI}{32}{subsubsection.2.3.3.3}%
+\contentsline {subsection}{\numberline {4}Thiết kế tầng dịch vụ trí tuệ nhân tạo}{33}{subsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {4.1}Module chatbot tư vấn sản phẩm}{33}{subsubsection.2.3.4.1}%
+\contentsline {subsubsection}{\numberline {4.2}Module tìm kiếm sản phẩm bằng hình ảnh}{33}{subsubsection.2.3.4.2}%
+\contentsline {subsubsection}{\numberline {4.3}Module đề xuất sản phẩm}{34}{subsubsection.2.3.4.3}%
+\contentsline {subsection}{\numberline {5}Thiết kế tầng lưu trữ dữ liệu}{34}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {6}Thiết kế tích hợp dịch vụ bên ngoài}{35}{subsection.2.3.6}%
+\contentsline {subsubsection}{\numberline {6.1}Dịch vụ quản lý hình ảnh Cloudinary}{35}{subsubsection.2.3.6.1}%
+\contentsline {subsubsection}{\numberline {6.2}Dịch vụ thanh toán VNPay}{35}{subsubsection.2.3.6.2}%
+\contentsline {subsection}{\numberline {7}Cơ chế giao tiếp giữa các thành phần}{36}{subsection.2.3.7}%
+\contentsline {section}{\numberline {IV}Thiết kế cơ sở dữ liệu}{36}{section.2.4}%
+\contentsline {subsection}{\numberline {1}Tổng quan thiết kế cơ sở dữ liệu}{37}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2}Sơ đồ thực thể -- liên kết}{37}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {3}Thiết kế các nhóm bảng dữ liệu nghiệp vụ}{37}{subsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {3.1}Nhóm quản lý tài khoản và phân quyền}{37}{subsubsection.2.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.2}Nhóm quản lý sản phẩm và danh mục}{39}{subsubsection.2.4.3.2}%
+\contentsline {subsubsection}{\numberline {3.3}Nhóm quản lý giỏ hàng và sản phẩm yêu thích}{39}{subsubsection.2.4.3.3}%
+\contentsline {subsubsection}{\numberline {3.4}Nhóm quản lý đơn hàng và thanh toán}{39}{subsubsection.2.4.3.4}%
+\contentsline {subsubsection}{\numberline {3.5}Nhóm quản lý đánh giá và tương tác người dùng}{40}{subsubsection.2.4.3.5}%
+\contentsline {subsubsection}{\numberline {3.6}Nhóm quản lý bài viết và nội dung}{40}{subsubsection.2.4.3.6}%
+\contentsline {subsection}{\numberline {4}Thiết kế dữ liệu phục vụ trí tuệ nhân tạo}{40}{subsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {4.1}Dữ liệu phục vụ chatbot RAG}{40}{subsubsection.2.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.2}Dữ liệu phục vụ tìm kiếm bằng hình ảnh}{41}{subsubsection.2.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.3}Dữ liệu phục vụ gợi ý sản phẩm}{41}{subsubsection.2.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4}Tổ chức và truy xuất dữ liệu vector}{41}{subsubsection.2.4.4.4}%
+\contentsline {section}{\numberline {V}Thiết kế các chức năng trí tuệ nhân tạo}{42}{section.2.5}%
+\contentsline {subsection}{\numberline {1}Thiết kế module chatbot RAG}{42}{subsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {1.1}Sơ đồ Use Case}{42}{subsubsection.2.5.1.1}%
+\contentsline {subsubsection}{\numberline {1.2}Sơ đồ kiến trúc}{43}{subsubsection.2.5.1.2}%
+\contentsline {subsubsection}{\numberline {1.3}Sơ đồ tuần tự}{44}{subsubsection.2.5.1.3}%
+\contentsline {subsection}{\numberline {2}Thiết kế module tìm kiếm sản phẩm bằng hình ảnh}{45}{subsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.1}Sơ đồ Use Case}{45}{subsubsection.2.5.2.1}%
+\contentsline {subsubsection}{\numberline {2.2}Sơ đồ kiến trúc}{45}{subsubsection.2.5.2.2}%
+\contentsline {subsubsection}{\numberline {2.3}Sơ đồ tuần tự}{46}{subsubsection.2.5.2.3}%
+\contentsline {subsection}{\numberline {3}Thiết kế module gợi ý sản phẩm cá nhân hóa}{47}{subsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {3.1}Sơ đồ Use Case}{47}{subsubsection.2.5.3.1}%
+\contentsline {subsubsection}{\numberline {3.2}Sơ đồ kiến trúc}{48}{subsubsection.2.5.3.2}%
+\contentsline {subsubsection}{\numberline {3.3}Sơ đồ tuần tự}{48}{subsubsection.2.5.3.3}%
+\contentsline {chapter}{\numberline {3}TRIỂN KHAI VÀ KIỂM THỬ HỆ THỐNG}{50}{chapter.3}%
+\contentsline {section}{\numberline {I}Môi trường và công nghệ triển khai}{50}{section.3.1}%
+\contentsline {subsection}{\numberline {1}Môi trường triển khai}{50}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {2}Các công nghệ sử dụng}{50}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.1}Next.js}{50}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {2.2}Spring Boot}{50}{subsubsection.3.1.2.2}%
+\contentsline {subsubsection}{\numberline {2.3}Python và FastAPI}{50}{subsubsection.3.1.2.3}%
+\contentsline {subsubsection}{\numberline {2.4}PostgreSQL và pgvector}{51}{subsubsection.3.1.2.4}%
+\contentsline {subsubsection}{\numberline {2.5}BAAI/bge-m3}{51}{subsubsection.3.1.2.5}%
+\contentsline {subsubsection}{\numberline {2.6}SigLIP}{51}{subsubsection.3.1.2.6}%
+\contentsline {subsubsection}{\numberline {2.7}Mô hình ngôn ngữ lớn}{51}{subsubsection.3.1.2.7}%
+\contentsline {subsubsection}{\numberline {2.8}Git}{51}{subsubsection.3.1.2.8}%
+\contentsline {section}{\numberline {II}Triển khai hệ thống thương mại điện tử}{51}{section.3.2}%
+\contentsline {subsection}{\numberline {1}Triển khai chức năng tài khoản}{51}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {2}Triển khai chức năng sản phẩm}{52}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3}Triển khai chức năng giỏ hàng và đặt hàng}{54}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {4}Triển khai các chức năng hỗ trợ}{55}{subsection.3.2.4}%
+\contentsline {section}{\numberline {III}Kiểm thử và đánh giá hệ thống}{56}{section.3.3}%
+\contentsline {subsection}{\numberline {1}Kiểm thử các chức năng nghiệp vụ}{56}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {2}Kiểm thử các chức năng trí tuệ nhân tạo}{56}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{57}{chapter.4}%
+\contentsline {section}{\numberline {I}Kết quả đạt được}{57}{section.4.1}%
+\contentsline {section}{\numberline {II}Hạn chế của hệ thống}{57}{section.4.2}%
+\contentsline {section}{\numberline {III}Hướng phát triển}{57}{section.4.3}%
