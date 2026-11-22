@@ -24,6 +24,8 @@
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
 \usepackage{colortbl} % Cần thiết để đổi màu đường kẻ \arrayrulecolor
 \usepackage{xcolor}
 
@@ -153,8 +155,7 @@ Nhóm chúng em xin chân thành cảm ơn!
         \hline
 
         1 & Nguyễn Đình Sông &
-        \textbf{Frontend:} Đảm nhiệm chính việc xây dựng
-        giao diện của hệ thống.\newline
+        \textbf{Frontend:} Đảm nhiệm chính việc xây dựng toàn bộ giao diện hệ thống: trang chủ, cửa hàng (shop), chi tiết sản phẩm, thanh toán, đăng nhập/đăng ký, trang quản trị (admin), tin tức/blog và đánh giá sản phẩm.\newline
         \textbf{Backend:} Xây dựng chức năng đề xuất
         sản phẩm dựa trên hành vi người dùng,
         quên mật khẩu, blog và đánh giá sản phẩm.\newline
@@ -422,25 +423,71 @@ Những sản phẩm có mức độ tương đồng cao nhất được lựa c
 
 \section{Hệ thống gợi ý và cá nhân hóa sản phẩm}
 \subsection{Tổng quan về hệ thống gợi ý}
-Hệ thống gợi ý (Recommender System) là hệ thống phân tích dữ liệu nhằm dự đoán sở thích và đề xuất những sản phẩm phù hợp với người dùng.\\\\
+Hệ thống gợi ý (Recommender System) là hệ thống phân tích dữ liệu nhằm dự đoán sở thích và đề xuất những sản phẩm phù hợp nhất với nhu cầu của từng người dùng.\\\\
 Các phương pháp gợi ý phổ biến bao gồm:
 \begin{itemize}
-    \item \textbf{Content-Based Recommendation:} Gợi ý dựa trên đặc trưng sản phẩm và sở thích người dùng.
-    \item \textbf{Behavior-Based Recommendation:} Gợi ý dựa trên lịch sử tương tác của người dùng.
-    \item \textbf{Hybrid Recommendation:} Kết hợp nhiều phương pháp nhằm nâng cao chất lượng đề xuất.
+    \item \textbf{Content-Based Recommendation:} Gợi ý dựa trên đặc trưng nội dung của sản phẩm và hồ sơ sở thích của người dùng.
+    \item \textbf{Behavior-Based Recommendation:} Gợi ý dựa trên lịch sử tương tác và hành vi thực tế của người dùng.
+    \item \textbf{Hybrid Recommendation:} Kết hợp linh hoạt giữa đặc trưng vector nội dung, dữ liệu hành vi và các quy tắc nghiệp vụ thực tế.
 \end{itemize}
-Trong thương mại điện tử, việc kết hợp đặc trưng sản phẩm và dữ liệu hành vi giúp hệ thống cá nhân hóa danh sách sản phẩm theo nhu cầu của từng người dùng.
+Trong hệ thống TechWiseAI, module gợi ý sản phẩm được xây dựng theo kiến trúc Hybrid linh hoạt, kết hợp giữa biểu diễn ngữ nghĩa dạng vector (Dense Vector Embeddings) qua tiện ích mở rộng pgvector của PostgreSQL và mô hình phân tích hành vi tương tác thời gian thực.
 
 \subsection{Phân tích hành vi và xây dựng hồ sơ sở thích}
-Hành vi người dùng là nguồn dữ liệu phản ánh mức độ quan tâm đối với sản phẩm, bao gồm xem, nhấp vào, yêu thích, thêm vào giỏ hàng và mua hàng. Các tương tác này được xem là phản hồi ngầm (Implicit Feedback) và có thể được gán trọng số khác nhau.\\\\
-Thông tin sản phẩm được biểu diễn thành vector thông qua các mô hình mã hóa văn bản như Sentence Transformers. Hồ sơ sở thích người dùng (User Preference Profile) có thể được xây dựng bằng cách tổng hợp các vector sản phẩm đã tương tác theo trọng số:
+Hành vi người dùng phản ánh chân thực mức độ quan tâm đối với từng sản phẩm. Các tương tác này được xem là phản hồi ngầm (Implicit Feedback). Để mô hình hóa chính xác ý định mua sắm, hệ thống thiết lập bậc thang trọng số hành vi (Action Weights) và cơ chế lọc nhiễu thực tế.
+
+\subsubsection{Bậc thang trọng số hành vi và lọc nhiễu tương tác}
+Mỗi loại hành vi mang lại mức độ tin cậy khác nhau về sở thích của người dùng. Hệ thống định nghĩa bảng trọng số cơ sở như sau:
+
+\begin{table}[H]
+    \centering
+    \caption{Bảng trọng số các loại hành vi tương tác của người dùng}
+    \label{tab:action_weights}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{4.2cm}|>{\centering\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}X|}
+        \hline
+        \textbf{Loại hành vi} & \textbf{Trọng số ($w_{\text{base}}$)} & \textbf{Ý nghĩa và cơ chế xử lý} \\
+        \hline
+        \texttt{PURCHASE} & 5.0 & Người dùng hoàn tất đặt mua, phản ánh mức độ quan tâm cao nhất. \\
+        \hline
+        \texttt{ADD\_TO\_CART} & 3.0 & Thêm sản phẩm vào giỏ hàng, thể hiện ý định mua rõ rệt. \\
+        \hline
+        \texttt{FAVORITE} & 2.0 & Đánh dấu sản phẩm yêu thích để theo dõi. \\
+        \hline
+        \texttt{VIEW / CLICK} & 1.0 & Xem trang chi tiết hoặc nhấp chuột vào sản phẩm. \\
+        \hline
+        Lọc nhiễu Dwell Time & Giảm còn 0.5 & Nếu thời gian xem trang chi tiết $< 4$ giây (lướt nhanh hoặc nhấp nhầm), trọng số giảm xuống $0.5$ để tránh làm sai lệch hồ sơ sở thích. \\
+        \hline
+        Khử trùng lặp (Dedup) & Bỏ qua & Các tương tác trùng lặp cùng loại trên một sản phẩm trong vòng 15 giây sẽ được tự động bỏ qua để chống spam. \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\subsubsection{Hàm suy giảm thời gian (Half-Life Temporal Decay)}
+Sở thích công nghệ của người dùng biến động theo thời gian: những sản phẩm vừa xem trong vài ngày gần đây luôn có ý nghĩa lớn hơn sản phẩm xem từ nhiều tuần trước. Do đó, hệ thống áp dụng hàm suy giảm theo chu kỳ bán rã (Half-Life Decay) 7 ngày:
 \[
-\mathbf{p}_u =
-\frac{\sum_{i=1}^{n} w_i\mathbf{v}_i}
-{\sum_{i=1}^{n} w_i}
+w_i = w_{\text{base}} \times \exp\left(-\frac{\ln(2) \cdot \Delta t}{T_{1/2}}\right)
 \]
-Trong đó, $\mathbf{p}_u$ là vector sở thích người dùng, $\mathbf{v}_i$ là vector sản phẩm và $w_i$ là trọng số tương tác, với tổng trọng số khác 0.\\\\
-Để phản ánh sự thay đổi sở thích theo thời gian, hệ thống có thể áp dụng kỹ thuật Time Decay nhằm giảm ảnh hưởng của những tương tác cũ. Ngoài vector sở thích, hồ sơ người dùng còn có thể lưu thông tin về danh mục, thương hiệu và khoảng giá thường quan tâm.
+Trong đó:
+\begin{itemize}
+    \item $w_{\text{base}}$ là trọng số cơ sở của hành vi tương tác.
+    \item $\Delta t$ là khoảng thời gian (tính bằng giây) trôi qua kể từ thời điểm tương tác đến thời điểm tính toán.
+    \item $T_{1/2} = 7 \text{ ngày} = 604{,}800 \text{ giây}$ là chu kỳ bán rã. Theo công thức này, sau 7 ngày trọng số tương tác giảm còn $50\%$, sau 14 ngày còn $25\%$.
+\end{itemize}
+
+\subsubsection{Tổng hợp và chuẩn hóa Vector hồ sơ người dùng}
+Mỗi sản phẩm được biểu diễn thành vector đặc trưng $\mathbf{v}_i \in \mathbb{R}^{384}$ thông qua mô hình mã hóa Sentence-Transformers (\texttt{all-MiniLM-L6-v2}). Vector hồ sơ sở thích của người dùng $\mathbf{p}_u$ được tổng hợp từ các vector sản phẩm đã tương tác trong vòng 30 ngày gần nhất theo trọng số:
+\[
+\mathbf{p}'_u = \frac{\sum_{i=1}^{n} w_i \mathbf{v}_i}{\sum_{i=1}^{n} w_i}
+\]
+Để đảm bảo tính nhất quán và công bằng về độ lớn khi tính khoảng cách tương đồng Cosine, vector hồ sơ sau khi tổng hợp bắt buộc phải được chuẩn hóa theo chuẩn Euclid (L2 Norm):
+\[
+\mathbf{p}_u = \frac{\mathbf{p}'_u}{\|\mathbf{p}'_u\|_2}
+\]
+Bên cạnh vector đặc trưng $\mathbf{p}_u$, hệ thống tự động xác định các danh mục quan tâm nhất (Top 3 Favorite Categories) và khoảng giá ưu tiên $[P_{\min}, P_{\max}]$ với biên độ dao động $\pm 35\%$ quanh mức giá trung bình có trọng số $\bar{P}$:
+\[
+\bar{P} = \frac{\sum_{i=1}^{n} w_i P_i}{\sum_{i=1}^{n} w_i}, \quad P_{\min} = \max(0, \bar{P} \times 0.65), \quad P_{\max} = \bar{P} \times 1.35
+\]
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Image/user_profile.png}
@@ -448,29 +495,35 @@ Trong đó, $\mathbf{p}_u$ là vector sở thích người dùng, $\mathbf{v}_i$
     \label{fig:user_profile}
 \end{figure}
 
-\subsection{Xếp hạng sản phẩm đa tiêu chí}
-Xếp hạng đa tiêu chí (Multi-Factor Ranking) là phương pháp đánh giá mức độ phù hợp của sản phẩm dựa trên nhiều yếu tố, bao gồm độ tương đồng ngữ nghĩa, danh mục, thương hiệu và khoảng giá.\\\\
-Điểm phù hợp của sản phẩm $i$ đối với người dùng $u$ có thể được xác định như sau:
-\[
-S(u,i)=
-\alpha S_{\text{semantic}}+
-\beta S_{\text{category}}+
-\gamma S_{\text{brand}}+
-\delta S_{\text{price}}
-\]
-Trong đó, các thành phần $S$ biểu diễn điểm phù hợp theo từng tiêu chí; $\alpha$, $\beta$, $\gamma$, $\delta$ là các trọng số điều chỉnh, thường được lựa chọn sao cho tổng bằng 1.\\\\
-Các điểm thành phần cần được đưa về thang đo phù hợp trước khi kết hợp. Sau khi tính điểm, hệ thống sắp xếp sản phẩm theo thứ tự giảm dần và lựa chọn những sản phẩm có điểm cao nhất để đề xuất.
+\subsection{Cơ chế thích ứng động 3 chế độ (Dynamic Adaptation Modes)}
+Trong thực tế, số lượng tương tác của người dùng thay đổi theo thời gian sử dụng hệ thống. Để giải quyết triệt để bài toán khởi đầu lạnh (Cold Start) và chuyển tiếp mượt mà sang gợi ý cá nhân hóa sâu, hệ thống xây dựng cơ chế thích ứng động gồm 3 chế độ:
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Image/rr.png}
-    \caption{Quy trình gợi ý và xếp hạng sản phẩm đa tiêu chí}
+    \caption{Quy trình gợi ý thích ứng động và xếp hạng sản phẩm}
     \label{fig:recommendation_ranking}
 \end{figure}
 
-\subsection{Bài toán Cold Start}
-Cold Start xảy ra khi hệ thống chưa có đủ dữ liệu tương tác để xác định sở thích của người dùng mới hoặc thiếu thông tin về sản phẩm mới.\\\\
-Để giải quyết vấn đề này, hệ thống có thể ưu tiên gợi ý các sản phẩm phổ biến, nổi bật hoặc mới được cập nhật. Khi người dùng phát sinh thêm tương tác, hồ sơ sở thích được cập nhật để từng bước chuyển sang gợi ý cá nhân hóa.\\\\
-Trong TechWiseAI, các phương pháp phân tích hành vi, biểu diễn vector và xếp hạng đa tiêu chí là cơ sở để xây dựng chức năng đề xuất sản phẩm phù hợp với sở thích người dùng.
+\begin{enumerate}
+    \item \textbf{Chế độ Khởi đầu lạnh (\texttt{COLD\_START}) - Khi số tương tác $N = 0$:}
+    Đối với người dùng mới hoặc khách vãng lai chưa có dữ liệu lịch sử, hệ thống tự động chuyển sang chế độ xu hướng: truy xuất danh sách các sản phẩm bán chạy, sản phẩm nổi bật (\texttt{featured}), có lượt đánh giá cao và số lượng mua nhiều.
+    \item \textbf{Chế độ Khám phá (\texttt{EXPLORING}) - Khi số tương tác $1 \le N \le 5$:}
+    Khi người dùng bắt đầu có những tương tác đầu tiên, sở thích chưa thực sự ổn định. Hệ thống áp dụng cơ chế pha trộn linh hoạt: lấy tỷ trọng vector sở thích sơ khởi từ $10\%$ đến $30\%$, phần còn lại kết hợp với các sản phẩm thịnh hành để vừa đáp ứng sự quan tâm ban đầu, vừa kích thích khám phá thêm danh mục mới.
+    \item \textbf{Chế độ Cá nhân hóa sâu (\texttt{PERSONALIZED}) - Khi số tương tác $N \ge 6$:}
+    Hồ sơ sở thích đã có đủ độ tin cậy. Hệ thống nâng tỷ trọng vector cá nhân hóa lên $50\% - 60\%$. Danh sách đề xuất được truy vấn trực tiếp thông qua khoảng cách Cosine trên pgvector:
+    \[
+    \text{Similarity}(p, \mathbf{p}_u) = 1 - (\mathbf{e}_p \Leftrightarrow \mathbf{p}_u)
+    \]
+    Trong đó, $\mathbf{e}_p$ là vector embedding của sản phẩm và toán tử $\Leftrightarrow$ tính khoảng cách Cosine trong pgvector.
+\end{enumerate}
+
+\subsection{Các quy tắc nghiệp vụ bổ trợ}
+Để nâng cao trải nghiệm mua sắm và tính thực tiễn, danh sách gợi ý còn tuân thủ các quy tắc nghiệp vụ:
+\begin{itemize}
+    \item \textbf{Loại trừ sản phẩm đã mua gần đây:} Tự động loại bỏ các sản phẩm người dùng đã mua trong vòng 30 ngày qua để tránh đề xuất lặp lại gây phiền toái.
+    \item \textbf{Giải thích lý do gợi ý (Recommendation Explainability):} Mỗi sản phẩm được gắn huy hiệu tương ứng (\texttt{FOR\_YOU}, \texttt{CHOICE}, \texttt{BEST}, \texttt{HOT}) kèm theo lời giải thích rõ ràng (ví dụ: \textit{“Phù hợp 95\% với gu công nghệ của bạn”} hoặc \textit{“Đúng danh mục bạn đang tìm kiếm”}) giúp tăng tính minh bạch và độ tin cậy của hệ thống.
+\end{itemize}
 
 \chapter{PHÂN TÍCH VÀ THIẾT KẾ HỆ THỐNG}
 \section{Phân tích yêu cầu hệ thống}
@@ -1129,10 +1182,12 @@ Các trường cấu hình cho phép quản lý phương pháp tổng hợp đ�
 Cấu trúc này hỗ trợ tìm kiếm sản phẩm dựa trên độ tương đồng hình ảnh, đồng thời tạo điều kiện mở rộng sang tìm kiếm đa phương thức.
 
 \subsubsection{Dữ liệu phục vụ gợi ý sản phẩm}
-Chức năng gợi ý sử dụng hai bảng chính là \texttt{user\_interaction\_events} và \texttt{user\_recommendation\_profiles}.\\\\
-Bảng \texttt{user\_interaction\_events} lưu trữ lịch sử hành vi, trong khi \texttt{user\_recommendation\_profiles} lưu trữ hồ sơ sở thích được tổng hợp từ các tương tác.\\\\
-Hồ sơ sở thích bao gồm vector đại diện \texttt{profile\_vector}, danh mục quan tâm, khoảng giá ưu tiên, số lượng tương tác và thời điểm cập nhật.\\\\
-Việc tách dữ liệu hành vi và hồ sơ sở thích giúp hệ thống cập nhật thông tin cá nhân hóa mà không ảnh hưởng đến cấu trúc tài khoản người dùng.
+Chức năng gợi ý sử dụng hai bảng chính trong cơ sở dữ liệu PostgreSQL kết hợp phần mở rộng pgvector:
+\begin{itemize}
+    \item Bảng \texttt{user\_interaction\_events}: Lưu trữ chi tiết từng sự kiện tương tác của người dùng, bao gồm khóa chính \texttt{id} (kiểu UUID), \texttt{user\_id} (cho người dùng đã đăng nhập), \texttt{session\_id} (định danh phiên khách vãng lai), \texttt{product\_id} (liên kết bảng \texttt{products}), loại hành vi \texttt{event\_type} (\texttt{PURCHASE}, \texttt{ADD\_TO\_CART}, \texttt{FAVORITE}, \texttt{VIEW}, \texttt{CLICK}), thời lượng xem \texttt{duration\_seconds}, trường \texttt{metadata} và thời điểm \texttt{created\_at}. Bảng được thiết lập các chỉ mục tối ưu gồm \texttt{idx\_user\_interactions\_session\_time} và chỉ mục khử trùng lặp \texttt{idx\_user\_interactions\_dedup}.
+    \item Bảng \texttt{user\_recommendation\_profiles}: Lưu trữ hồ sơ sở thích được tổng hợp từ dữ liệu hành vi. Bảng bao gồm khóa ngoại liên kết người dùng \texttt{user\_id} hoặc phiên \texttt{session\_id}, vector sở thích \texttt{profile\_vector} có kích thước 384 chiều (\texttt{vector(384)}) được đánh chỉ mục HNSW (\texttt{vector\_cosine\_ops}), danh mục ưa thích \texttt{favorite\_categories} (kiểu \texttt{JSONB}), khoảng giá quan tâm \texttt{preferred\_price\_min}, \texttt{preferred\_price\_max}, tổng số tương tác \texttt{interaction\_count} và thời gian cập nhật.
+\end{itemize}
+Việc phân tách rõ ràng giữa lịch sử tương tác và hồ sơ sở thích giúp hệ thống dễ dàng cập nhật thông tin cá nhân hóa bất đồng bộ, đồng thời hỗ trợ đồng nhất cả khách vãng lai lẫn người dùng đã có tài khoản.
 
 \subsubsection{Tổ chức và truy xuất dữ liệu vector}
 Phần mở rộng pgvector cho phép lưu trữ và thực hiện các phép toán tương đồng trên dữ liệu vector.\\\\
@@ -1296,15 +1351,12 @@ hồ sơ sở thích và dữ liệu phục vụ gợi ý sản phẩm.
 \end{figure}
 
 \subsubsection{Sơ đồ kiến trúc}
-Module gợi ý sử dụng dữ liệu sản phẩm,
-lịch sử tương tác và hồ sơ sở thích người dùng.\\\\
-Các hành vi như xem sản phẩm, thêm vào danh sách
-yêu thích, thêm vào giỏ hàng và đặt hàng
-được ghi nhận để xác định mức độ quan tâm
-của người dùng đối với sản phẩm.\\\\
-Dựa trên dữ liệu thu thập, hệ thống xây dựng
-hồ sơ sở thích, lựa chọn các sản phẩm ứng viên
-và đánh giá mức độ phù hợp để tạo danh sách gợi ý.
+Module gợi ý sản phẩm cá nhân hóa được tổ chức theo kiến trúc microservice độc lập (sử dụng Python FastAPI), kết nối trực tiếp với cơ sở dữ liệu PostgreSQL (tiện ích mở rộng pgvector) và giao tiếp với Frontend Next.js thông qua chuẩn RESTful API.\\\\
+Kiến trúc bao gồm hai luồng dữ liệu chính:
+\begin{itemize}
+    \item \textbf{Luồng thu thập và xử lý hành vi (Ingestion Pipeline):} Tiếp nhận các sự kiện tương tác (\texttt{VIEW}, \texttt{CLICK}, \texttt{FAVORITE}, \texttt{ADD\_TO\_CART}, \texttt{PURCHASE}) từ Frontend qua API \texttt{/api/v1/recommendations/interactions}. Hệ thống thực hiện kiểm tra khử trùng lặp trong 15 giây, ghi nhận vào bảng \texttt{user\_interaction\_events}, sau đó kích hoạt tính toán lại vector hồ sơ sở thích theo trọng số, lọc nhiễu thời gian xem (Dwell Time $< 4$ giây), áp dụng hàm suy giảm thời gian bán rã 7 ngày và chuẩn hóa chuẩn L2 Norm trước khi cập nhật vào bảng \texttt{user\_recommendation\_profiles}.
+    \item \textbf{Luồng phục vụ gợi ý (Serving Pipeline):} Tiếp nhận yêu cầu từ API \texttt{/api/v1/recommendations/for-you}. Dựa trên số lượng tương tác, hệ thống tự động xác định chế độ thích ứng (\texttt{COLD\_START}, \texttt{EXPLORING}, \texttt{PERSONALIZED}) để truy xuất danh sách sản phẩm tiềm năng thông qua phép toán khoảng cách Cosine trên pgvector, kết hợp lọc bỏ sản phẩm đã mua gần đây và xếp hạng theo tỷ lệ động.
+\end{itemize}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]
@@ -1314,18 +1366,9 @@ và đánh giá mức độ phù hợp để tạo danh sách gợi ý.
 \end{figure}
 
 \subsubsection{Sơ đồ tuần tự}
-Sơ đồ tuần tự mô tả quá trình ghi nhận
-hành vi người dùng và tạo danh sách
-sản phẩm gợi ý. Hệ thống thu thập
-các tương tác như xem sản phẩm,
-thời gian xem và đánh dấu yêu thích.
-Dữ liệu được xử lý để cập nhật hồ sơ
-sở thích của người dùng.\\\\
-Khi người dùng truy cập trang chủ,
-hệ thống phân tích hồ sơ sở thích,
-truy xuất các sản phẩm tiềm năng
-và xếp hạng theo mức độ phù hợp
-trước khi hiển thị danh sách gợi ý.
+Sơ đồ tuần tự mô tả chi tiết quy trình tương tác giữa người dùng, giao diện Frontend, dịch vụ gợi ý và tầng cơ sở dữ liệu:\\\\
+Khi người dùng duyệt web, giao diện Client tự động đo lường thời gian xem và gửi các sự kiện hành vi về dịch vụ gợi ý. Hệ thống xử lý lọc nhiễu, cập nhật lại vector sở thích của phiên hiện tại.\\\\
+Khi người dùng truy cập trang chủ hoặc xem mục \textit{“Dành riêng cho bạn”}, Frontend gửi yêu cầu kèm theo mã định danh (\texttt{user\_id} hoặc \texttt{session\_id}). Dịch vụ gợi ý truy vấn hồ sơ người dùng trong bảng \texttt{user\_recommendation\_profiles}, xác định trạng thái tương tác để quyết định danh sách sản phẩm ứng viên từ pgvector, loại bỏ các sản phẩm đã mua trong vòng 30 ngày, gán nhãn giải thích lý do gợi ý (\texttt{FOR\_YOU}, \texttt{CHOICE}, \texttt{BEST}, \texttt{HOT}) và trả về cho giao diện hiển thị trực quan.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]
@@ -1561,7 +1604,7 @@ truy xuất, xử lý và trả về kết quả.
     \caption{Kiểm thử các module trí tuệ nhân tạo}
     \label{tab:ai-testing}
     \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{|p{1cm}|p{4cm}|p{5cm}|p{2cm}|}
+    \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1.2cm}|p{3.8cm}|X|>{\centering\arraybackslash}p{1.8cm}|}
         \hline
         \textbf{STT} &
         \textbf{Chức năng} &
@@ -1569,15 +1612,21 @@ truy xuất, xử lý và trả về kết quả.
         \textbf{Kết quả} \\
         \hline
         1 & Chatbot RAG &
-        Tư vấn dựa trên dữ liệu sản phẩm & Đạt \\
+        Tư vấn chính xác dựa trên thông tin cấu hình sản phẩm & Đạt \\
         \hline
         2 & Tìm kiếm bằng hình ảnh &
-        Trả về sản phẩm tương đồng & Đạt \\
+        Truy xuất sản phẩm tương đồng về kiểu dáng và màu sắc & Đạt \\
         \hline
-        3 & Gợi ý sản phẩm &
-        Đề xuất sản phẩm phù hợp & Đạt \\
+        3 & Gợi ý khởi đầu lạnh (Cold Start) &
+        Khách mới (0 tương tác): Đề xuất sản phẩm bán chạy, thịnh hành nhất & Đạt \\
         \hline
-    \end{tabular}
+        4 & Gợi ý cá nhân hóa theo hành vi &
+        Đề xuất bám sát vector sở thích người dùng, đúng danh mục và tầm giá quan tâm & Đạt \\
+        \hline
+        5 & Xử lý lọc nhiễu và loại trừ &
+        Tự động loại bỏ sản phẩm đã mua trong 30 ngày, giảm trọng số khi lướt nhanh ($< 4$s) & Đạt \\
+        \hline
+    \end{tabularx}
 \end{table}
 
 
