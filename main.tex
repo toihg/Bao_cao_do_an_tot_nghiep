@@ -4,6 +4,7 @@
 \usepackage[fontsize=13pt]{scrextend}
 \usepackage[hidelinks]{hyperref}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage[vietnamese]{babel}
 \usepackage[paperheight=29.7cm, paperwidth=21cm, top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry} % Đảm bảo cân đối lề
 \usepackage{times} % Chọn font Time New Roman
@@ -18,6 +19,7 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \usepackage{listings}
+\usepackage{pdflscape}
 \usepackage[most]{tcolorbox}
 
 \setcounter{secnumdepth}{3}
@@ -122,15 +124,23 @@ Sinh viên thực hiện:\\[-1cm]
 \begin{center}
     \fontsize{18pt}{22pt}\selectfont \textbf{LỜI CẢM ƠN}
 \end{center}
-Trong suốt quá trình học tập và thực hiện đồ án tốt nghiệp, nhóm chúng em đã nhận được sự quan tâm, hướng dẫn và hỗ trợ quý báu từ quý thầy cô, gia đình và bạn bè. Đây là nguồn động viên to lớn giúp nhóm chúng em vượt qua những khó khăn và hoàn thành đồ án.\\ 
+Trong suốt quá trình học tập và thực hiện đồ án tốt nghiệp, nhóm chúng em đã nhận được sự quan tâm, hướng dẫn và hỗ trợ 
+quý báu từ quý thầy cô, gia đình và bạn bè. Đây là nguồn động viên to lớn giúp nhóm chúng em vượt qua những khó khăn và 
+hoàn thành đồ án.\\ 
 
-Trước hết, nhóm chúng em xin gửi lời cảm ơn chân thành đến \textbf{quý thầy cô Khoa Công nghệ Thông tin} đã tận tình giảng dạy, truyền đạt những kiến thức và kinh nghiệm quý báu trong suốt quá trình học tập. Những kiến thức này là nền tảng quan trọng giúp nhóm chúng em vận dụng vào quá trình nghiên cứu và thực hiện đồ án tốt nghiệp.\\
+Trước hết, nhóm chúng em xin gửi lời cảm ơn chân thành đến \textbf{quý thầy cô Khoa Công nghệ Thông tin} đã tận tình giảng
+ dạy, truyền đạt những kiến thức và kinh nghiệm quý báu trong suốt quá trình học tập. Những kiến thức này là nền tảng quan
+  trọng giúp nhóm chúng em vận dụng vào quá trình nghiên cứu và thực hiện đồ án tốt nghiệp.\\
 
-Đặc biệt, nhóm chúng em xin bày tỏ lòng biết ơn sâu sắc đến \textbf{thầy Lê Văn Minh}, người đã tận tình hướng dẫn, định hướng và đưa ra những ý kiến đóng góp quý báu, giúp nhóm chúng em từng bước giải quyết khó khăn và hoàn thiện đồ án.\\
+Đặc biệt, nhóm chúng em xin bày tỏ lòng biết ơn sâu sắc đến \textbf{thầy Lê Văn Minh}, người đã tận tình hướng dẫn, định
+ hướng và đưa ra những ý kiến đóng góp quý báu, giúp nhóm chúng em từng bước giải quyết khó khăn và hoàn thiện đồ án.\\
 
-Bên cạnh đó, nhóm chúng em xin cảm ơn gia đình và bạn bè đã luôn động viên, hỗ trợ và tạo điều kiện thuận lợi trong suốt quá trình học tập và thực hiện đồ án.\\
+Bên cạnh đó, nhóm chúng em xin cảm ơn gia đình và bạn bè đã luôn động viên, hỗ trợ và tạo điều kiện thuận lợi trong suốt
+ quá trình học tập và thực hiện đồ án.\\
 
-Mặc dù đã nỗ lực nghiên cứu và hoàn thiện đồ án, nhưng do kiến thức, kinh nghiệm thực tế và thời gian thực hiện còn hạn chế, đồ án khó tránh khỏi những thiếu sót. Nhóm chúng em rất mong nhận được những ý kiến đóng góp từ quý thầy cô để có thể tiếp tục học hỏi và hoàn thiện hơn trong tương lai.\\
+Mặc dù đã nỗ lực nghiên cứu và hoàn thiện đồ án, nhưng do kiến thức, kinh nghiệm thực tế và thời gian thực hiện còn hạn chế,
+ đồ án khó tránh khỏi những thiếu sót. Nhóm chúng em rất mong nhận được những ý kiến đóng góp từ quý thầy cô để có thể tiếp
+  tục học hỏi và hoàn thiện hơn trong tương lai.\\
 
 Cuối cùng, nhóm chúng em xin kính chúc quý thầy cô luôn dồi dào sức khỏe, hạnh phúc và thành công trong sự nghiệp.\\
 
@@ -141,10 +151,8 @@ Nhóm chúng em xin chân thành cảm ơn!
     \fontsize{18pt}{22pt}\selectfont \textbf{BẢNG PHÂN CHIA CÔNG VIỆC}
 \end{center}
 
-
 \begin{table}[htbp]
     \centering
-    \caption{Bảng phân chia công việc của nhóm}
     \label{tab:phan-chia-cong-viec}
     \renewcommand{\arraystretch}{1.4}
     \begin{tabular}{|c|p{3.5cm}|p{8cm}|}
@@ -155,7 +163,9 @@ Nhóm chúng em xin chân thành cảm ơn!
         \hline
 
         1 & Nguyễn Đình Sông &
-        \textbf{Frontend:} Đảm nhiệm chính việc xây dựng toàn bộ giao diện hệ thống: trang chủ, cửa hàng (shop), chi tiết sản phẩm, thanh toán, đăng nhập/đăng ký, trang quản trị (admin), tin tức/blog và đánh giá sản phẩm.\newline
+        \textbf{Frontend:} Đảm nhiệm chính việc xây dựng toàn bộ giao diện hệ thống: 
+        trang chủ, cửa hàng (shop), chi tiết sản phẩm, thanh toán, 
+        đăng nhập/đăng ký, trang quản trị (admin), tin tức/blog và đánh giá sản phẩm.\newline
         \textbf{Backend:} Xây dựng chức năng đề xuất
         sản phẩm dựa trên hành vi người dùng,
         quên mật khẩu, blog và đánh giá sản phẩm.\newline
@@ -164,8 +174,10 @@ Nhóm chúng em xin chân thành cảm ơn!
         \hline
 
         2 & Phạm Hồng Quân &
-        \textbf{Backend:} Đảm nhiệm chính việc xây dựng
-        các chức năng nghiệp vụ của hệ thống.\newline
+        \textbf{Backend:} Đảm nhiệm việc xây dựng backend cho các chức năng chính của hệ thống, bao gồm: 
+        Đăng ký, đăng nhập và xác thực người dùng. Quản lý sản phẩm. Quản lý danh mục sản phẩm.Quản lý danh sách sản phẩm
+         yêu thích. 
+        Quản lý giỏ hàng. Quản lý đơn hàng. Tích hợp và xử lý thanh toán.\newline
         \textbf{Frontend:} Xây dựng giao diện tìm kiếm
         sản phẩm bằng hình ảnh.\newline
         \textbf{AI:} Xây dựng module tìm kiếm
@@ -173,13 +185,12 @@ Nhóm chúng em xin chân thành cảm ơn!
         \hline
 
         3 & Hoàng Văn Tới &
-        \textbf{Backend:} Xây dựng chức năng
-        chatbot tư vấn khách hàng.\newline
+        \textbf{Backend:} Xây dựng API và tích hợp chatbot.\newline
         \textbf{Frontend:} Xây dựng giao diện chatbot.\newline
-        \textbf{AI:} Xây dựng module chatbot
-        tư vấn khách hàng.\newline
-        \textbf{Dữ liệu:} Thu thập dữ liệu
-        phục vụ hệ thống.\newline
+        \textbf{AI:} Xây dựng chatbot tư vấn sản phẩm sử dụng kiến trúc RAG, 
+        kết hợp Keyword Search, Semantic Search và LLM.\newline
+        \textbf{Dữ liệu:} Thu thập, làm sạch, chuẩn hóa dữ liệu sản phẩm. 
+        Xây dựng quy trình embedding từ cơ sở dữ liệu. \newline
         \textbf{Báo cáo:} Viết báo cáo đồ án. \\
         \hline
 
@@ -199,73 +210,110 @@ Nhóm chúng em xin chân thành cảm ơn!
 \addcontentsline{toc}{chapter}{PHẦN MỞ ĐẦU}
 
 \section{Lý do chọn đề tài}
-Sự phát triển của Internet và công nghệ thông tin đã thúc đẩy thương mại điện tử trở thành phương thức mua sắm phổ biến. Đối với các sản phẩm công nghệ như máy tính xách tay, điện thoại, tai nghe, máy ảnh và phụ kiện điện tử, sự đa dạng về mẫu mã, thông số kỹ thuật và mức giá mang đến nhiều lựa chọn nhưng cũng khiến người dùng gặp khó khăn trong việc tìm kiếm, so sánh và lựa chọn sản phẩm phù hợp.\\\\
-Hiện nay, phần lớn các website thương mại điện tử sử dụng phương pháp tìm kiếm theo từ khóa và bộ lọc có sẵn. Tuy nhiên, các phương pháp này còn hạn chế khi người dùng chưa xác định rõ nhu cầu, không biết chính xác tên sản phẩm hoặc muốn tìm kiếm thông qua hình ảnh. Việc so sánh nhiều sản phẩm cũng đòi hỏi người dùng dành nhiều thời gian tìm hiểu thông tin.\\\\
-Sự phát triển của trí tuệ nhân tạo (AI) mở ra khả năng cải thiện trải nghiệm mua sắm thông qua tìm kiếm bằng hình ảnh, chatbot tư vấn và hệ thống gợi ý sản phẩm. Đặc biệt, việc kết hợp mô hình ngôn ngữ lớn (LLM) với kỹ thuật Retrieval-Augmented Generation (RAG) cho phép chatbot khai thác dữ liệu sản phẩm để đưa ra câu trả lời có cơ sở và hạn chế thông tin không chính xác.\\\\
-Xuất phát từ những vấn đề trên, nhóm chúng em lựa chọn đề tài \textbf{``Xây dựng website thương mại điện tử sản phẩm công nghệ tích hợp trí tuệ nhân tạo hỗ trợ tìm kiếm, tư vấn và gợi ý sản phẩm''}. Đề tài hướng đến xây dựng một nền tảng mua sắm trực tuyến tích hợp các chức năng AI nhằm hỗ trợ người dùng tìm kiếm, lựa chọn sản phẩm hiệu quả hơn, đồng thời tạo cơ hội vận dụng kiến thức đã học vào thực tiễn.
+Sự phát triển của Internet và công nghệ thông tin đã thúc đẩy thương mại điện tử trở thành phương thức mua sắm phổ biến. 
+Đối với các sản phẩm công nghệ như máy tính xách tay, điện thoại, tai nghe, máy ảnh và phụ kiện điện tử, sự đa dạng về mẫu 
+mã, thông số kỹ thuật và mức giá mang đến nhiều lựa chọn nhưng cũng khiến người dùng gặp khó khăn trong việc tìm kiếm, 
+so sánh và lựa chọn sản phẩm phù hợp.\\
+
+Hiện nay, phần lớn các website thương mại điện tử sử dụng phương pháp tìm kiếm theo từ khóa và bộ lọc có sẵn. Tuy nhiên, 
+các phương pháp này còn hạn chế khi người dùng chưa xác định rõ nhu cầu, không biết chính xác tên sản phẩm hoặc muốn tìm 
+kiếm thông qua hình ảnh. Việc so sánh nhiều sản phẩm cũng đòi hỏi người dùng dành nhiều thời gian tìm hiểu thông tin.\\
+
+Sự phát triển của trí tuệ nhân tạo (AI) mở ra khả năng cải thiện trải nghiệm mua sắm thông qua tìm kiếm bằng hình ảnh, 
+chatbot tư vấn và hệ thống gợi ý sản phẩm. Đặc biệt, việc kết hợp mô hình ngôn ngữ lớn (LLM) với kỹ thuật 
+Retrieval-Augmented Generation (RAG) cho phép chatbot khai thác dữ liệu sản phẩm để đưa ra câu trả lời có cơ sở và hạn chế
+ thông tin không chính xác.\\
+Xuất phát từ những vấn đề trên, nhóm chúng em lựa chọn đề tài \textbf{``Xây dựng website thương mại điện tử sản phẩm công
+ nghệ tích hợp trí tuệ nhân tạo hỗ trợ tìm kiếm, tư vấn và gợi ý sản phẩm''}. Đề tài hướng đến xây dựng một nền tảng mua
+  sắm trực tuyến tích hợp các chức năng AI nhằm hỗ trợ người dùng tìm kiếm, lựa chọn sản phẩm hiệu quả hơn, đồng thời tạo
+   cơ hội vận dụng kiến thức đã học vào thực tiễn.
 
 \section{Mục tiêu đề tài}
 \subsection{Mục tiêu tổng quát}
-Nghiên cứu, thiết kế và xây dựng website thương mại điện tử kinh doanh sản phẩm công nghệ, đáp ứng nhu cầu tìm kiếm, quản lý và mua sắm trực tuyến. Đồng thời, tích hợp các chức năng trí tuệ nhân tạo (AI) như chatbot tư vấn ứng dụng Retrieval-Augmented Generation (RAG), tìm kiếm bằng hình ảnh và gợi ý sản phẩm thông minh nhằm nâng cao trải nghiệm người dùng và hỗ trợ lựa chọn sản phẩm phù hợp.
+Nghiên cứu, thiết kế và xây dựng website thương mại điện tử kinh doanh sản phẩm công nghệ, đáp ứng nhu cầu tìm kiếm, quản 
+lý và mua sắm trực tuyến. Đồng thời, tích hợp các chức năng trí tuệ nhân tạo (AI) như chatbot tư vấn ứng dụng 
+Retrieval-Augmented Generation (RAG), tìm kiếm bằng hình ảnh và gợi ý sản phẩm thông minh nhằm nâng cao trải nghiệm người 
+dùng và hỗ trợ lựa chọn sản phẩm phù hợp.
 
 \subsection{Mục tiêu cụ thể}
 Để đạt được mục tiêu tổng quát, đề tài tập trung vào các mục tiêu sau:
 
 \begin{itemize}
     \item \textbf{Phân tích và thiết kế hệ thống:} Xác định yêu cầu, thiết kế kiến trúc, cơ sở dữ liệu và giao diện website.
-    \item \textbf{Xây dựng website thương mại điện tử:} Phát triển các chức năng quản lý tài khoản, tìm kiếm sản phẩm, giỏ hàng, đặt hàng và theo dõi đơn hàng.
-    \item \textbf{Phát triển chatbot RAG:} Kết hợp mô hình ngôn ngữ lớn (LLM) với RAG để tư vấn sản phẩm bằng ngôn ngữ tự nhiên dựa trên dữ liệu hệ thống.
+    \item \textbf{Xây dựng website thương mại điện tử:} Phát triển các chức năng quản lý tài khoản, tìm kiếm sản phẩm, giỏ hàng, 
+    đặt hàng và theo dõi đơn hàng.
+    \item \textbf{Phát triển chatbot RAG:} Kết hợp mô hình ngôn ngữ lớn (LLM) với RAG để tư vấn sản phẩm bằng ngôn ngữ tự nhiên 
+    dựa trên dữ liệu hệ thống.
     \item \textbf{Tìm kiếm sản phẩm bằng hình ảnh:} Phân tích hình ảnh đầu vào và truy xuất các sản phẩm có đặc điểm tương đồng.
     \item \textbf{Gợi ý sản phẩm thông minh:} Xây dựng chức năng đề xuất sản phẩm dựa trên dữ liệu sản phẩm và hành vi người dùng.
     \item \textbf{Xây dựng chức năng quản trị:} Quản lý người dùng, danh mục, sản phẩm, đơn hàng và nội dung website.
     \item \textbf{Kiểm thử và đánh giá:} Kiểm tra chức năng, đánh giá kết quả hoạt động và xác định các hạn chế của hệ thống.
 \end{itemize}
 
-
 \section{Đối tượng và phạm vi nghiên cứu}
 \subsection{Đối tượng nghiên cứu}
-Đề tài tập trung nghiên cứu các công nghệ và phương pháp xây dựng website thương mại điện tử tích hợp trí tuệ nhân tạo, bao gồm:
+Đề tài tập trung nghiên cứu các công nghệ và phương pháp xây dựng website thương mại điện tử tích hợp trí tuệ nhân tạo, bao 
+gồm:
 
 \begin{itemize}
     \item \textbf{Hệ thống thương mại điện tử:} Các quy trình quản lý sản phẩm, người dùng, giỏ hàng, đơn hàng và thanh toán.
     \item \textbf{Công nghệ phát triển web:} Next.js, Spring Boot, FastAPI và PostgreSQL kết hợp pgvector.
-    \item \textbf{Chatbot tư vấn sản phẩm:} Mô hình ngôn ngữ lớn (LLM), Retrieval-Augmented Generation (RAG), embedding và tìm kiếm kết hợp.
+    \item \textbf{Chatbot tư vấn sản phẩm:} Mô hình ngôn ngữ lớn (LLM), Retrieval-Augmented Generation (RAG), embedding và 
+    tìm kiếm kết hợp.
     \item \textbf{Tìm kiếm bằng hình ảnh:} Các kỹ thuật trích xuất đặc trưng và tìm kiếm sản phẩm dựa trên độ tương đồng.
     \item \textbf{Hệ thống gợi ý sản phẩm:} Các phương pháp phân tích hành vi và đề xuất sản phẩm phù hợp với người dùng.
 \end{itemize}
 
 \subsection{Phạm vi nghiên cứu}
-Đề tài tập trung xây dựng website thương mại điện tử kinh doanh các sản phẩm công nghệ như máy tính xách tay, điện thoại, tai nghe, máy ảnh, linh kiện và phụ kiện điện tử.\\\\
-Hệ thống bao gồm các chức năng mua sắm trực tuyến, quản lý sản phẩm, tài khoản, giỏ hàng, đơn hàng và thanh toán; đồng thời tích hợp ba chức năng AI chính: chatbot tư vấn ứng dụng RAG, tìm kiếm bằng hình ảnh và gợi ý sản phẩm theo hành vi người dùng.\\\\
-Dữ liệu phục vụ các chức năng AI được khai thác từ cơ sở dữ liệu sản phẩm của hệ thống. Đề tài được triển khai và đánh giá trong môi trường thử nghiệm, chưa tập trung vào vận hành thương mại quy mô lớn hoặc tối ưu hóa cho số lượng người dùng đồng thời cao.
+Đề tài tập trung xây dựng website thương mại điện tử kinh doanh các sản phẩm công nghệ như máy tính xách tay, điện thoại, 
+tai nghe, máy ảnh, linh kiện và phụ kiện điện tử.\\
+
+Hệ thống bao gồm các chức năng mua sắm trực tuyến, quản lý sản phẩm, tài khoản, giỏ hàng, đơn hàng và thanh toán; đồng thời 
+tích hợp ba chức năng AI chính: chatbot tư vấn ứng dụng RAG, tìm kiếm bằng hình ảnh và gợi ý sản phẩm theo hành vi người 
+dùng.\\
+
+Dữ liệu phục vụ các chức năng AI được khai thác từ cơ sở dữ liệu sản phẩm của hệ thống. Đề tài được triển khai và đánh giá 
+trong môi trường thử nghiệm, chưa tập trung vào vận hành thương mại quy mô lớn hoặc tối ưu hóa cho số lượng người dùng đồng 
+thời cao.
 
 \section{Phương pháp nghiên cứu}
 Để thực hiện đề tài, nhóm sử dụng các phương pháp nghiên cứu sau:
 
 \begin{itemize}
-    \item \textbf{Nghiên cứu tài liệu:} Tìm hiểu các công nghệ phát triển web, mô hình ngôn ngữ lớn, RAG, tìm kiếm hình ảnh và hệ thống gợi ý sản phẩm.
+    \item \textbf{Nghiên cứu tài liệu:} Tìm hiểu các công nghệ phát triển web, mô hình ngôn ngữ lớn, RAG, tìm kiếm hình ảnh và hệ 
+    thống gợi ý sản phẩm.
     \item \textbf{Phân tích và thiết kế:} Xác định yêu cầu, thiết kế kiến trúc hệ thống, cơ sở dữ liệu và các chức năng nghiệp vụ.
     \item \textbf{Thu thập và xử lý dữ liệu:} Thu thập, làm sạch và chuẩn hóa dữ liệu sản phẩm phục vụ website và các chức năng AI.
     \item \textbf{Thực nghiệm và đánh giá:} Xây dựng, tích hợp, kiểm thử các chức năng và đánh giá kết quả hoạt động của hệ thống.
 \end{itemize}
 
 \section{Ý nghĩa của đề tài}
-Đề tài góp phần ứng dụng trí tuệ nhân tạo vào thương mại điện tử nhằm hỗ trợ người dùng tìm kiếm, tư vấn và lựa chọn sản phẩm công nghệ phù hợp. Việc tích hợp chatbot RAG, tìm kiếm bằng hình ảnh và hệ thống gợi ý sản phẩm giúp nâng cao khả năng tương tác và trải nghiệm mua sắm trực tuyến.\\\\
-Bên cạnh đó, đề tài tạo cơ hội vận dụng kiến thức về phát triển ứng dụng web, cơ sở dữ liệu và trí tuệ nhân tạo vào thực tiễn, đồng thời làm cơ sở để nghiên cứu, cải tiến và mở rộng các chức năng thông minh trong tương lai.
+Đề tài góp phần ứng dụng trí tuệ nhân tạo vào thương mại điện tử nhằm hỗ trợ người dùng tìm kiếm, tư vấn và lựa chọn sản phẩm công 
+nghệ phù hợp. Việc tích hợp chatbot RAG, tìm kiếm bằng hình ảnh và hệ thống gợi ý sản phẩm giúp nâng cao khả năng tương tác và trải 
+nghiệm mua sắm trực tuyến.\\
+
+Bên cạnh đó, đề tài tạo cơ hội vận dụng kiến thức về phát triển ứng dụng web, cơ sở dữ liệu và trí tuệ nhân tạo vào thực tiễn, đồng thời 
+làm cơ sở để nghiên cứu, cải tiến và mở rộng các chức năng thông minh trong tương lai.
 
 \chapter{CƠ SỞ LÝ THUYẾT}
 \section{Tổng quan về thương mại điện tử}
 \subsection{Khái niệm và đặc điểm thương mại điện tử}
-Thương mại điện tử (Electronic Commerce -- E-commerce) là hình thức thực hiện các hoạt động mua bán hàng hóa và dịch vụ thông qua phương tiện điện tử, chủ yếu là Internet. Các hoạt động bao gồm giới thiệu sản phẩm, tìm kiếm thông tin, đặt hàng, thanh toán và quản lý giao dịch.\\\\
+Thương mại điện tử (Electronic Commerce -- E-commerce) là hình thức thực hiện các hoạt động mua bán hàng hóa và dịch vụ thông qua phương
+ tiện điện tử, chủ yếu là Internet. Các hoạt động bao gồm giới thiệu sản phẩm, tìm kiếm thông tin, đặt hàng, thanh toán và quản lý giao 
+ dịch.\\
+
 So với thương mại truyền thống, thương mại điện tử cho phép người dùng mua sắm không phụ thuộc vào địa điểm, dễ dàng tiếp cận thông tin, so sánh sản phẩm và thực hiện giao dịch trực tuyến. Đồng thời, các quy trình quản lý sản phẩm, giỏ hàng và đơn hàng có thể được tự động hóa thông qua hệ thống phần mềm.
 
 \subsection{Mô hình thương mại điện tử B2C}
-Business-to-Consumer (B2C) là mô hình thương mại điện tử trong đó doanh nghiệp cung cấp sản phẩm hoặc dịch vụ trực tiếp đến người tiêu dùng thông qua nền tảng trực tuyến.\\\\
-Mô hình B2C gồm hai nhóm đối tượng chính: khách hàng thực hiện tìm kiếm, lựa chọn và mua sắm sản phẩm; quản trị viên quản lý sản phẩm, người dùng và đơn hàng.\\\\
+Business-to-Consumer (B2C) là mô hình thương mại điện tử trong đó doanh nghiệp cung cấp sản phẩm hoặc dịch vụ trực tiếp đến người tiêu dùng thông qua nền tảng trực tuyến.\\
+
+Mô hình B2C gồm hai nhóm đối tượng chính: khách hàng thực hiện tìm kiếm, lựa chọn và mua sắm sản phẩm; quản trị viên quản lý sản phẩm, người dùng và đơn hàng.\\
+
 Trong đề tài TechWiseAI, mô hình B2C được áp dụng để xây dựng website kinh doanh sản phẩm công nghệ, kết hợp các chức năng mua sắm và quản trị trên cùng một hệ thống.
 
 \subsection{Ứng dụng trí tuệ nhân tạo trong thương mại điện tử}
-Trí tuệ nhân tạo (Artificial Intelligence -- AI) được ứng dụng trong thương mại điện tử nhằm nâng cao khả năng tìm kiếm, phân tích dữ liệu và hỗ trợ người dùng lựa chọn sản phẩm.\\\\
+Trí tuệ nhân tạo (Artificial Intelligence -- AI) được ứng dụng trong thương mại điện tử nhằm nâng cao khả năng tìm kiếm, phân tích dữ liệu và hỗ trợ người dùng lựa chọn sản phẩm.\\
+
 Các ứng dụng chính bao gồm:
 \begin{itemize}
     \item \textbf{Chatbot tư vấn sản phẩm:} Kết hợp mô hình ngôn ngữ lớn (LLM) với Retrieval-Augmented Generation (RAG) để tư vấn dựa trên dữ liệu sản phẩm.
@@ -274,15 +322,17 @@ Các ứng dụng chính bao gồm:
 \end{itemize}
 Trong TechWiseAI, ba chức năng trên được tích hợp nhằm hỗ trợ quá trình tìm kiếm, tư vấn và mua sắm sản phẩm công nghệ.
 
-
 \section{Biểu diễn và truy xuất dữ liệu bằng vector}
 \subsection{Khái niệm Embedding}
-Embedding là kỹ thuật chuyển đổi dữ liệu như văn bản, hình ảnh hoặc sản phẩm thành vector số trong không gian nhiều chiều. Các vector được tạo bởi mô hình học máy nhằm biểu diễn những đặc trưng của dữ liệu, giúp hệ thống xác định mức độ tương đồng giữa các đối tượng.\\\\
-Một vector embedding được biểu diễn như sau:
+Embedding là kỹ thuật chuyển đổi dữ liệu như văn bản, hình ảnh hoặc âm thanh thành các vector số trong không gian nhiều chiều. Quá trình này được thực hiện thông qua các mô hình học máy đã được huấn luyện nhằm trích xuất và biểu diễn những đặc trưng quan trọng của dữ liệu.\\
+
+Mỗi đối tượng sau khi được mã hóa sẽ tương ứng với một vector có số chiều cố định:
 \[
 \mathbf{v}=(v_1,v_2,\ldots,v_d)
 \]
-Trong đó, $d$ là số chiều của vector và $v_i$ là giá trị tại chiều thứ $i$. Những đối tượng có đặc trưng tương đồng thường được biểu diễn gần nhau trong không gian vector theo độ đo phù hợp.
+Trong đó, $d$ là số chiều của vector và $v_i$ là giá trị tại chiều thứ $i$. Các giá trị này được mô hình tính toán từ dữ liệu đầu vào, không nhất thiết tương ứng với một đặc trưng riêng biệt có thể diễn giải trực tiếp.\\
+
+Trong không gian vector, những đối tượng có đặc trưng hoặc ngữ nghĩa tương đồng thường được biểu diễn gần nhau theo một độ đo phù hợp. Nhờ đó, hệ thống có thể tìm kiếm và so sánh dữ liệu dựa trên mức độ tương đồng thay vì chỉ dựa vào sự trùng khớp từ khóa.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{Image/vector.png}
@@ -291,18 +341,36 @@ Trong đó, $d$ là số chiều của vector và $v_i$ là giá trị tại chi
 \end{figure}
 
 \subsection{Text Embedding và Image Embedding}
-\textbf{Text Embedding} là quá trình chuyển đổi văn bản thành vector biểu diễn ngữ nghĩa. Kỹ thuật này cho phép tìm kiếm các nội dung liên quan ngay cả khi không sử dụng từ khóa giống nhau. Trong hệ thống RAG, Text Embedding được sử dụng để biểu diễn truy vấn người dùng và thông tin sản phẩm.\\\\
-\textbf{Image Embedding} là quá trình trích xuất đặc trưng hình ảnh và biểu diễn dưới dạng vector. Các vector này được sử dụng để so sánh mức độ tương đồng giữa hình ảnh đầu vào và hình ảnh sản phẩm, hỗ trợ chức năng tìm kiếm bằng hình ảnh.
+\textbf{Text Embedding} là quá trình chuyển đổi văn bản thành vector biểu diễn ngữ nghĩa thông qua các mô hình ngôn ngữ. Mô hình tiếp nhận văn bản, phân tích các thành phần ngôn ngữ và tạo ra vector đại diện cho nội dung. Các văn bản có ý nghĩa gần nhau có thể được biểu diễn bằng những vector có mức độ tương đồng cao, ngay cả khi sử dụng các từ ngữ khác nhau.\\
 
-\subsection{Độ tương đồng Cosine và chuẩn hóa L2}
-Cosine Similarity là phương pháp đo mức độ tương đồng giữa hai vector dựa trên cosin của góc tạo bởi chúng, được xác định bằng công thức:
+\textbf{Image Embedding} là quá trình chuyển đổi hình ảnh thành vector thông qua các mô hình trích xuất đặc trưng. Vector thu được biểu diễn những thông tin về hình dạng, màu sắc, cấu trúc và các đặc điểm thị giác của hình ảnh.
+
+\subsection{Độ tương đồng và chuẩn hóa vector}
+Để xác định mức độ tương đồng hoặc khoảng cách giữa các vector, hệ thống thường sử dụng các phép đo như Cosine Similarity, Euclidean Distance và Inner Product.\\
+
+\textbf{Cosine Similarity} là phương pháp đo mức độ tương đồng dựa trên cosin của góc giữa hai vector:
 \[
 \operatorname{sim}(A,B)=
 \frac{\mathbf{A}\cdot\mathbf{B}}
 {\|\mathbf{A}\|\|\mathbf{B}\|}
 \]
-Trong đó, $\mathbf{A}\cdot\mathbf{B}$ là tích vô hướng, còn $\|\mathbf{A}\|$ và $\|\mathbf{B}\|$ là độ dài của hai vector. Giá trị tương đồng nằm trong khoảng $[-1,1]$, với giá trị càng gần 1 thể hiện hướng của hai vector càng tương đồng.\\\\
-Chuẩn hóa L2 đưa vector khác vector không về độ dài đơn vị mà không thay đổi hướng của nó:
+Trong đó, $\mathbf{A}\cdot\mathbf{B}$ là tích vô hướng và $\|\mathbf{A}\|$, $\|\mathbf{B}\|$ là độ dài của hai vector. Giá trị nằm trong khoảng $[-1,1]$, với giá trị càng gần 1 thể hiện hai vector càng tương đồng về hướng.\\
+
+\textbf{Euclidean Distance (L2)} đo khoảng cách trực tiếp giữa hai vector trong không gian nhiều chiều:
+\[
+D(A,B)=
+\sqrt{\sum_{i=1}^{d}(a_i-b_i)^2}
+\]
+Khoảng cách càng nhỏ thì hai vector càng gần nhau.\\
+
+\textbf{Inner Product} là phép tính tích vô hướng giữa hai vector:
+\[
+IP(A,B)=\mathbf{A}\cdot\mathbf{B}
+=\sum_{i=1}^{d}a_i b_i
+\]
+Giá trị càng lớn thể hiện mức độ tương đồng càng cao khi sử dụng các vector được chuẩn hóa phù hợp.\\
+
+Bên cạnh các phép đo trên, chuẩn hóa L2 thường được sử dụng để đưa vector khác vector không về độ dài đơn vị mà không làm thay đổi hướng:
 \[
 \hat{\mathbf{v}}=
 \frac{\mathbf{v}}{\|\mathbf{v}\|_2},
@@ -310,46 +378,93 @@ Chuẩn hóa L2 đưa vector khác vector không về độ dài đơn vị mà 
 \|\mathbf{v}\|_2=
 \sqrt{\sum_{i=1}^{d}v_i^2}
 \]
-Khi hai vector đã được chuẩn hóa L2, độ tương đồng Cosine có thể tính trực tiếp bằng tích vô hướng:
+Khi hai vector đã được chuẩn hóa L2, Cosine Similarity có thể tính trực tiếp bằng tích vô hướng:
 \[
 \operatorname{sim}(A,B)=
 \hat{\mathbf{A}}\cdot\hat{\mathbf{B}}
 \]
-Các phép toán trên được sử dụng trong tìm kiếm ngữ nghĩa và truy xuất những sản phẩm có đặc trưng tương đồng.
+Việc chuẩn hóa giúp loại bỏ ảnh hưởng của độ lớn vector, tập trung vào hướng biểu diễn khi so sánh mức độ tương đồng.
 
 \subsection{Tìm kiếm láng giềng gần nhất và HNSW}
-Tìm kiếm láng giềng gần nhất (Nearest Neighbor Search -- NNS) là phương pháp xác định các vector có khoảng cách nhỏ nhất hoặc độ tương đồng cao nhất với vector truy vấn.\\\\
-Với tập vector $V$ và truy vấn $\mathbf{q}$, hệ thống tìm kiếm $K$ vector có mức độ tương đồng cao nhất để trả về kết quả Top-K.\\\\
-Đối với tập dữ liệu lớn, việc so sánh toàn bộ vector có thể làm tăng thời gian xử lý. Vì vậy, các thuật toán tìm kiếm láng giềng gần đúng (Approximate Nearest Neighbor -- ANN) được sử dụng để tăng tốc độ truy xuất.\\\\
-Hierarchical Navigable Small World (HNSW) là thuật toán ANN tổ chức các vector thành đồ thị nhiều tầng. Quá trình tìm kiếm bắt đầu từ tầng cao và di chuyển xuống các tầng thấp để xác định những vector gần với truy vấn.
+Tìm kiếm láng giềng gần nhất (Nearest Neighbor Search -- NNS) là phương pháp xác định các vector có khoảng cách nhỏ nhất hoặc mức độ tương đồng cao nhất với một vector truy vấn. Kết quả thường được giới hạn trong $K$ vector phù hợp nhất, gọi là Top-K.\\
+
+Có hai phương pháp tìm kiếm phổ biến:
+\begin{itemize}
+    \item \textbf{Exact Nearest Neighbor (ENN):} So sánh vector truy vấn với toàn bộ vector trong tập dữ liệu để tìm kết quả chính xác nhất. Phương pháp này có độ chính xác cao nhưng chi phí tính toán tăng khi dữ liệu lớn.
+    \item \textbf{Approximate Nearest Neighbor (ANN):} Sử dụng cấu trúc chỉ mục để tìm kiếm các vector gần nhất mà không cần kiểm tra toàn bộ dữ liệu. Phương pháp này cải thiện tốc độ truy xuất nhưng có thể không tìm được kết quả chính xác tuyệt đối.
+\end{itemize}
+Hierarchical Navigable Small World (HNSW) là một thuật toán ANN sử dụng cấu trúc đồ thị nhiều tầng để tổ chức và tìm kiếm vector. Mỗi nút trong đồ thị đại diện cho một vector, các cạnh thể hiện mối liên kết giữa những vector lân cận.\\\\
+Cấu trúc HNSW gồm các tầng có mật độ liên kết khác nhau. Tầng trên chứa ít nút hơn, hỗ trợ tìm kiếm trên phạm vi rộng; các tầng dưới chứa nhiều nút hơn, giúp xác định những vector lân cận chính xác hơn.\\\\
+Quá trình tìm kiếm bắt đầu từ một nút tại tầng cao nhất. Thuật toán lần lượt di chuyển đến các nút gần với vector truy vấn hơn, sau đó chuyển xuống tầng thấp hơn để tiếp tục tìm kiếm. Quá trình kết thúc tại tầng cơ sở và trả về các kết quả Top-K phù hợp nhất.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Image/hnsw.png}
     \caption{Cấu trúc đồ thị nhiều tầng và quá trình tìm kiếm HNSW}
     \label{fig:hnsw}
 \end{figure}
-HNSW giúp tăng tốc độ tìm kiếm trên tập dữ liệu lớn, nhưng có thể đánh đổi một phần độ chính xác so với tìm kiếm chính xác.\\\\
-Trong TechWiseAI, biểu diễn vector và tìm kiếm tương đồng là cơ sở kỹ thuật cho chatbot RAG, tìm kiếm sản phẩm bằng hình ảnh và hệ thống gợi ý sản phẩm.
+Một số tham số quan trọng ảnh hưởng đến hiệu quả của HNSW gồm:
+\begin{itemize}
+    \item \textbf{M:} Số lượng liên kết tối đa của mỗi nút, ảnh hưởng đến cấu trúc đồ thị và dung lượng bộ nhớ.
+    \item \textbf{ef\_construction:} Số lượng ứng viên được xem xét trong quá trình xây dựng chỉ mục. Giá trị lớn thường cải thiện chất lượng chỉ mục nhưng làm tăng thời gian xây dựng.
+    \item \textbf{ef\_search:} Số lượng ứng viên được xem xét trong quá trình truy vấn. Giá trị lớn thường cải thiện độ chính xác nhưng làm tăng thời gian tìm kiếm.
+\end{itemize}
+HNSW cho phép cân bằng giữa tốc độ truy xuất, độ chính xác và tài nguyên bộ nhớ, phù hợp với các hệ thống tìm kiếm vector trên tập dữ liệu lớn.
 
+\subsection{Cơ sở dữ liệu vector và pgvector}
+Cơ sở dữ liệu vector là hệ thống lưu trữ và quản lý các vector embedding, hỗ trợ tìm kiếm dữ liệu dựa trên khoảng cách hoặc mức độ tương đồng. Ngoài việc lưu trữ vector, hệ thống còn cung cấp các phương pháp lập chỉ mục nhằm tăng tốc độ truy xuất trên tập dữ liệu lớn.\\\\
+PostgreSQL là hệ quản trị cơ sở dữ liệu quan hệ có thể mở rộng khả năng lưu trữ và tìm kiếm vector thông qua extension pgvector. Extension này bổ sung kiểu dữ liệu \texttt{vector(n)}, cho phép lưu trữ vector có số chiều xác định và hỗ trợ các phép toán khoảng cách:
+\begin{itemize}
+    \item \texttt{<->}: Tính khoảng cách Euclidean (L2).
+    \item \texttt{<=>}: Tính Cosine Distance.
+    \item \texttt{<\#>}: Tính negative Inner Product.
+\end{itemize}
+Ngoài tìm kiếm chính xác, pgvector hỗ trợ các chỉ mục ANN phổ biến như HNSW và IVFFlat. Trong đó, HNSW sử dụng đồ thị nhiều tầng, còn IVFFlat tổ chức vector thành các cụm để giới hạn phạm vi tìm kiếm.\\\\
+Việc tích hợp pgvector với PostgreSQL cho phép lưu trữ vector cùng dữ liệu quan hệ như thông tin sản phẩm, danh mục và giá bán trong cùng một hệ quản trị cơ sở dữ liệu.
+
+\subsection{Quy trình biểu diễn và truy xuất dữ liệu bằng vector}
+Quá trình biểu diễn và truy xuất dữ liệu bằng vector thường được chia thành hai giai đoạn chính:\\\\
+\textbf{Giai đoạn xây dựng dữ liệu:}
+\begin{enumerate}
+    \item Thu thập và tiền xử lý dữ liệu đầu vào.
+    \item Chia tài liệu thành các đoạn nhỏ (Chunking) đối với dữ liệu văn bản.
+    \item Sử dụng mô hình Embedding để chuyển đổi từng đoạn dữ liệu thành vector.
+    \item Lưu trữ vector cùng nội dung và thông tin liên quan vào cơ sở dữ liệu vector.
+    \item Xây dựng chỉ mục tìm kiếm nhằm tăng tốc độ truy xuất.
+\end{enumerate}
+\textbf{Giai đoạn truy xuất dữ liệu:}
+\begin{enumerate}
+    \item Tiếp nhận truy vấn từ người dùng và thực hiện tiền xử lý.
+    \item Sử dụng cùng mô hình Embedding để chuyển truy vấn thành vector.
+    \item Tìm kiếm các vector tương đồng trong cơ sở dữ liệu bằng phép đo khoảng cách phù hợp.
+    \item Xếp hạng và lựa chọn các kết quả phù hợp nhất theo số lượng Top-K.
+    \item Trả về nội dung tương ứng để phục vụ các bước xử lý tiếp theo.
+\end{enumerate}
+
+Trong TechWiseAI, các kỹ thuật biểu diễn và truy xuất vector là nền tảng cho tìm kiếm ngữ nghĩa trong chatbot RAG, tìm kiếm sản phẩm bằng hình ảnh và hệ thống gợi ý sản phẩm.
 
 \section{Mô hình ngôn ngữ lớn và kỹ thuật RAG}
 \subsection{Mô hình ngôn ngữ lớn (LLM)}
 Mô hình ngôn ngữ lớn (Large Language Model -- LLM) là mô hình học sâu được huấn luyện trên lượng lớn dữ liệu văn bản, có khả năng hiểu và sinh ngôn ngữ tự nhiên. Phần lớn LLM hiện đại sử dụng kiến trúc Transformer với cơ chế Attention để xử lý mối quan hệ giữa các thành phần trong ngữ cảnh.\\\\
-LLM được ứng dụng trong các tác vụ như trả lời câu hỏi, tóm tắt và tư vấn. Tuy nhiên, mô hình có thể tạo ra thông tin không chính xác (Hallucination) và không tự động cập nhật dữ liệu của ứng dụng. Vì vậy, trong thương mại điện tử, LLM cần được kết hợp với cơ chế truy xuất thông tin để cung cấp nội dung tư vấn dựa trên dữ liệu sản phẩm.\\\\
+LLM được ứng dụng trong các tác vụ như trả lời câu hỏi, tóm tắt và tư vấn. Tuy nhiên, mô hình có thể tạo ra thông tin không chính xác (Hallucination) và không tự động cập nhật dữ liệu của ứng dụng. Vì vậy, trong thương mại điện tử, LLM cần được kết hợp với cơ chế truy xuất thông tin để cung cấp nội dung tư vấn dựa trên dữ liệu sản phẩm.
 
 \subsection{Kỹ thuật RAG và tiền xử lý dữ liệu}
-Retrieval-Augmented Generation (RAG) là kỹ thuật kết hợp truy xuất thông tin (Retrieval) với mô hình ngôn ngữ lớn để sinh câu trả lời dựa trên dữ liệu bên ngoài.\\\\
+Retrieval-Augmented Generation (RAG) là kỹ thuật kết hợp truy xuất thông tin (Retrieval) với mô hình ngôn ngữ lớn (LLM) nhằm tạo ra câu trả lời dựa trên dữ liệu bên ngoài. Thay vì chỉ dựa vào kiến thức được huấn luyện sẵn, LLM có thể sử dụng thông tin được truy xuất từ cơ sở dữ liệu để tạo ra câu trả lời phù hợp với ngữ cảnh và dữ liệu thực tế.\\\\
 Quy trình RAG gồm hai giai đoạn chính:
 \begin{itemize}
-    \item \textbf{Chuẩn bị dữ liệu:} Thu thập, làm sạch, chuẩn hóa và chuyển đổi dữ liệu thành vector embedding để phục vụ truy xuất.
-    \item \textbf{Xử lý truy vấn:} Tiếp nhận câu hỏi, truy xuất thông tin liên quan và cung cấp ngữ cảnh cho LLM để sinh câu trả lời.
+    \item \textbf{Chuẩn bị dữ liệu (Indexing):} Thu thập, làm sạch, chuẩn hóa và chuyển đổi dữ liệu thành vector embedding. Các vector được lưu trữ cùng nội dung và metadata để phục vụ truy xuất.
+    \item \textbf{Xử lý truy vấn (Retrieval and Generation):} Tiếp nhận câu hỏi, tìm kiếm thông tin liên quan và cung cấp ngữ cảnh cho LLM để sinh câu trả lời.
 \end{itemize}
+Trong quá trình chuẩn bị dữ liệu, Chunking được sử dụng để chia tài liệu thành các đơn vị nhỏ hơn nhằm phù hợp với giới hạn đầu vào của mô hình embedding. Đối với dữ liệu sản phẩm có cấu trúc, mỗi sản phẩm có thể được biểu diễn thành một đơn vị dữ liệu riêng, bao gồm tên, thương hiệu, danh mục và thông số kỹ thuật.\\\\
+Sau khi tiền xử lý, dữ liệu được chuyển đổi thành vector embedding thông qua mô hình embedding. Quá trình này có thể biểu diễn như sau:
+\[
+\mathbf{v}=f_{\text{embed}}(D)
+\]
+Trong đó, $D$ là nội dung đầu vào, $f_{\text{embed}}$ là mô hình embedding và $\mathbf{v}$ là vector biểu diễn nội dung.\\\\
 Quá trình sinh câu trả lời được biểu diễn khái quát như sau:
 \[
 A=\operatorname{LLM}(Q,C)
 \]
 Trong đó, $Q$ là câu hỏi, $C$ là ngữ cảnh được truy xuất và $A$ là câu trả lời được tạo ra.\\\\
-Trong quá trình chuẩn bị dữ liệu, Chunking được sử dụng để chia tài liệu thành các đơn vị truy xuất phù hợp. Đối với dữ liệu sản phẩm có cấu trúc, mỗi sản phẩm có thể được biểu diễn thành một đơn vị dữ liệu riêng nếu đáp ứng giới hạn đầu vào của mô hình embedding.\\\\
 Trong TechWiseAI, RAG cho phép chatbot khai thác thông tin sản phẩm từ cơ sở dữ liệu nhằm hỗ trợ tư vấn và hạn chế việc tạo ra thông tin thiếu căn cứ.
 \begin{figure}[H]
     \centering
@@ -359,21 +474,28 @@ Trong TechWiseAI, RAG cho phép chatbot khai thác thông tin sản phẩm từ 
 \end{figure}
 
 \subsection{Truy xuất thông tin và Hybrid Search}
-Truy xuất thông tin (Retrieval) là quá trình tìm kiếm các tài liệu hoặc sản phẩm có mức độ liên quan cao với câu hỏi của người dùng.\\\\
-Trước khi truy xuất, hệ thống có thể phân tích truy vấn để xác định các điều kiện như danh mục, thương hiệu, khoảng giá và nhu cầu sử dụng.\\\\
+Truy xuất thông tin (Retrieval) là quá trình tìm kiếm và lựa chọn những tài liệu hoặc sản phẩm có mức độ liên quan cao với câu hỏi của người dùng. Trước khi truy xuất, hệ thống có thể phân tích truy vấn (Query Analysis) để xác định các điều kiện như danh mục, thương hiệu, khoảng giá và nhu cầu sử dụng.\\\\
 Hai phương pháp tìm kiếm phổ biến gồm:
 \begin{itemize}
-    \item \textbf{Keyword Search:} Tìm kiếm dựa trên từ khóa, phù hợp với tên sản phẩm, thương hiệu và thông số cụ thể.
-    \item \textbf{Semantic Search:} Sử dụng vector embedding để tìm kiếm dựa trên mức độ tương đồng ngữ nghĩa.
+    \item \textbf{Keyword Search:} Tìm kiếm dựa trên sự khớp giữa các từ khóa trong truy vấn và nội dung dữ liệu, phù hợp với tên sản phẩm, thương hiệu và thông số cụ thể.
+    \item \textbf{Semantic Search:} Sử dụng vector embedding để tìm kiếm dựa trên mức độ tương đồng ngữ nghĩa, cho phép tìm được những nội dung có ý nghĩa gần nhau ngay cả khi cách diễn đạt khác biệt.
 \end{itemize}
-Hybrid Search kết hợp hai phương pháp trên nhằm tận dụng ưu điểm của từng kỹ thuật. Kết quả truy xuất có thể được tổng hợp bằng thuật toán Reciprocal Rank Fusion (RRF):
+Đối với Semantic Search, độ tương đồng giữa hai vector thường được đánh giá bằng Cosine Similarity:
+\[
+\operatorname{sim}(A,B)=
+\frac{\mathbf{A}\cdot\mathbf{B}}
+{\|\mathbf{A}\|\|\mathbf{B}\|}
+\]
+Trong đó, $\mathbf{A}\cdot\mathbf{B}$ là tích vô hướng và $\|\mathbf{A}\|$, $\|\mathbf{B}\|$ là độ dài của hai vector. Giá trị nằm trong khoảng $[-1,1]$, với giá trị càng gần 1 thể hiện hai vector càng tương đồng về hướng.\\\\
+Hybrid Search là phương pháp kết hợp Keyword Search và Semantic Search nhằm tận dụng ưu điểm của cả hai kỹ thuật. Keyword Search hỗ trợ tìm kiếm chính xác các thông tin cụ thể, trong khi Semantic Search giúp nhận diện sự tương đồng về ý nghĩa giữa truy vấn và dữ liệu.\\\\
+Kết quả từ hai phương pháp có thể được tổng hợp bằng thuật toán Reciprocal Rank Fusion (RRF), dựa trên thứ hạng của tài liệu trong từng danh sách kết quả:
 \[
 \operatorname{RRF}(d)=
 \sum_{i=1}^{m}
 \frac{1}{k+r_i(d)}
 \]
-Trong đó, $m$ là số danh sách kết quả, $k$ là hằng số điều chỉnh và $r_i(d)$ là thứ hạng của tài liệu $d$ trong danh sách thứ $i$. Các danh sách không chứa tài liệu $d$ không đóng góp vào tổng điểm.\\\\
-RRF kết hợp kết quả dựa trên thứ hạng mà không yêu cầu chuẩn hóa điểm số, giúp lựa chọn các sản phẩm liên quan từ nhiều phương pháp tìm kiếm.
+Trong đó, $m$ là số danh sách kết quả, $k$ là hằng số điều chỉnh và $r_i(d)$ là thứ hạng của tài liệu $d$ trong danh sách thứ $i$. Những danh sách không chứa tài liệu $d$ không đóng góp vào tổng điểm.\\\\
+RRF không yêu cầu chuẩn hóa điểm số giữa các phương pháp tìm kiếm, giúp tổng hợp kết quả hiệu quả dựa trên thứ hạng của tài liệu.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Image/hybrid.png}
@@ -382,11 +504,21 @@ RRF kết hợp kết quả dựa trên thứ hạng mà không yêu cầu chu�
 \end{figure}
 
 \subsection{Reranking và sinh câu trả lời}
-Reranking là bước đánh giá và sắp xếp lại các kết quả truy xuất nhằm lựa chọn những tài liệu phù hợp nhất với câu hỏi. Bước này có thể sử dụng mô hình Cross-Encoder để đánh giá mức độ liên quan giữa truy vấn và từng tài liệu.\\\\
-Reranking là bước tùy chọn vì có thể làm tăng thời gian xử lý và chi phí tính toán.\\\\
-Sau khi truy xuất, hệ thống kết hợp câu hỏi với thông tin sản phẩm liên quan để xây dựng Prompt cho LLM. Mô hình sử dụng ngữ cảnh được cung cấp để tạo câu trả lời, đồng thời cần tránh đưa ra giá bán hoặc thông số kỹ thuật không có trong dữ liệu.\\\\
-Trong chatbot RAG, cơ chế Streaming có thể được sử dụng để truyền nội dung phản hồi từng phần, giúp người dùng theo dõi câu trả lời ngay trong quá trình sinh văn bản.
-
+Reranking là bước đánh giá và sắp xếp lại các kết quả truy xuất nhằm lựa chọn những tài liệu phù hợp nhất với câu hỏi. Một phương pháp phổ biến là sử dụng mô hình Cross-Encoder để đánh giá trực tiếp mức độ liên quan giữa truy vấn và từng tài liệu.\\\\
+Điểm liên quan có thể được biểu diễn như sau:
+\[
+s_i=f_{\text{cross}}(Q,D_i)
+\]
+Trong đó, $Q$ là truy vấn, $D_i$ là tài liệu thứ $i$ và $s_i$ là điểm đánh giá mức độ liên quan. Các tài liệu được sắp xếp theo điểm số từ cao xuống thấp.\\\\
+Reranking là bước tùy chọn vì có thể cải thiện chất lượng truy xuất nhưng đồng thời làm tăng thời gian xử lý và chi phí tính toán. Do đó, việc sử dụng cần cân nhắc dựa trên yêu cầu hiệu năng của hệ thống.\\\\
+Sau khi truy xuất, hệ thống kết hợp câu hỏi và thông tin liên quan để xây dựng Prompt cho LLM. Prompt thường bao gồm hướng dẫn hệ thống, câu hỏi người dùng, ngữ cảnh truy xuất và các yêu cầu đối với câu trả lời.\\\\
+Quá trình sinh câu trả lời có thể được biểu diễn như sau:
+\[
+A=\operatorname{LLM}(I,Q,C)
+\]
+Trong đó, $I$ là hướng dẫn hệ thống, $Q$ là câu hỏi và $C$ là ngữ cảnh được cung cấp. LLM cần ưu tiên sử dụng thông tin trong ngữ cảnh, hạn chế tự suy đoán khi dữ liệu không đầy đủ.\\\\
+Ngoài ra, cơ chế Streaming có thể được sử dụng để truyền nội dung phản hồi từng phần từ máy chủ đến giao diện người dùng ngay trong quá trình mô hình sinh văn bản. Điều này giúp giảm thời gian chờ hiển thị và cải thiện trải nghiệm tương tác với chatbot.\\\\
+Trong TechWiseAI, các kỹ thuật trên được kết hợp nhằm truy xuất thông tin sản phẩm phù hợp, cung cấp ngữ cảnh cho LLM và tạo ra câu trả lời phục vụ nhu cầu tư vấn của người dùng.
 
 \section{Thị giác máy tính và tìm kiếm hình ảnh}
 \subsection{Tìm kiếm hình ảnh dựa trên nội dung (CBIR)}
@@ -498,13 +630,6 @@ Bên cạnh vector đặc trưng $\mathbf{p}_u$, hệ thống tự động xác 
 \subsection{Cơ chế thích ứng động 3 chế độ (Dynamic Adaptation Modes)}
 Trong thực tế, số lượng tương tác của người dùng thay đổi theo thời gian sử dụng hệ thống. Để giải quyết triệt để bài toán khởi đầu lạnh (Cold Start) và chuyển tiếp mượt mà sang gợi ý cá nhân hóa sâu, hệ thống xây dựng cơ chế thích ứng động gồm 3 chế độ:
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{Image/rr.png}
-    \caption{Quy trình gợi ý thích ứng động và xếp hạng sản phẩm}
-    \label{fig:recommendation_ranking}
-\end{figure}
-
 \begin{enumerate}
     \item \textbf{Chế độ Khởi đầu lạnh (\texttt{COLD\_START}) - Khi số tương tác $N = 0$:}
     Đối với người dùng mới hoặc khách vãng lai chưa có dữ liệu lịch sử, hệ thống tự động chuyển sang chế độ xu hướng: truy xuất danh sách các sản phẩm bán chạy, sản phẩm nổi bật (\texttt{featured}), có lượt đánh giá cao và số lượng mua nhiều.
@@ -569,26 +694,41 @@ Bên cạnh các chức năng nghiệp vụ, hệ thống cần đáp ứng nh�
 
 
 \section{Phân tích chức năng hệ thống}
-
 \subsection{Sơ đồ phân rã chức năng hệ thống}
+Sơ đồ phân rã chức năng (Functional Decomposition Diagram – FDD) được sử dụng để mô tả cấu trúc phân cấp các chức năng của hệ thống. Thông qua việc chia hệ thống thành các nhóm chức năng chính và các chức năng con, sơ đồ giúp xác định phạm vi hoạt động cũng như thể hiện mối quan hệ giữa các thành phần chức năng.\\\\
+Hệ thống thương mại điện tử TechWiseAI được phân chia thành bảy nhóm chức năng chính như sau:
+\begin{itemize}
+    \item \textbf{Xác thực và tài khoản:} Cung cấp các chức năng đăng ký, đăng nhập bằng JWT, khôi phục mật khẩu và quản lý hồ sơ cá nhân, phục vụ việc xác thực và quản lý thông tin người dùng.
+    \item \textbf{Sản phẩm và tìm kiếm:} Bao gồm hiển thị trang chủ và chương trình khuyến mãi, menu danh mục, lọc và sắp xếp sản phẩm, tìm kiếm theo từ khóa và xem thông tin chi tiết sản phẩm.
+    \item \textbf{Trí tuệ nhân tạo (AI):} Cung cấp các chức năng ứng dụng AI như tìm kiếm sản phẩm bằng hình ảnh, đề xuất sản phẩm tương tự dựa trên hành vi người dùng và chatbot hỗ trợ tư vấn sản phẩm.
+    \item \textbf{Tương tác sản phẩm:} Cho phép người dùng so sánh cấu hình sản phẩm, gửi đánh giá, bình luận và quản lý danh sách sản phẩm yêu thích.
+    \item \textbf{Giỏ hàng, đặt hàng và thanh toán:} Hỗ trợ quản lý giỏ hàng, thực hiện đặt hàng, thanh toán thông qua các phương thức COD và VNPay, đồng thời cho phép theo dõi lịch sử mua hàng và hóa đơn.
+    \item \textbf{Tin tức và bài viết:} Cung cấp chức năng hiển thị danh sách tin tức và xem nội dung chi tiết của từng bài viết, giúp người dùng tiếp cận các thông tin liên quan đến sản phẩm và công nghệ.
+    \item \textbf{Quản trị hệ thống:} Cung cấp các chức năng quản lý dành cho quản trị viên, bao gồm thống kê kho hàng, quản lý sản phẩm và hình ảnh, danh mục, đơn hàng, người dùng, kiểm duyệt đánh giá và quản lý nhật ký hệ thống.
+\end{itemize}
 
-Sơ đồ phân rã chức năng (Functional Decomposition Diagram -- FDD) thể hiện cấu trúc phân cấp các chức năng của TechWiseAI, làm cơ sở cho việc phân tích và xây dựng các sơ đồ Use Case.
-
-Hệ thống được chia thành bảy nhóm chức năng chính: xác thực và tài khoản, sản phẩm và tìm kiếm, dịch vụ trí tuệ nhân tạo, tương tác sản phẩm, giỏ hàng và thanh toán, tin tức và bài viết, quản trị hệ thống.
-
+Việc phân chia thành các nhóm chức năng giúp hệ thống có cấu trúc rõ ràng, thuận tiện cho quá trình phân tích yêu cầu, thiết kế cơ sở dữ liệu và triển khai các thành phần phần mềm. Đồng thời, đây cũng là cơ sở để xác định các chức năng cần kiểm thử và đánh giá trong quá trình phát triển hệ thống.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{Image/FDD_Tong_quan.drawio.png}
+    \includegraphics[width=\textwidth, height= 7cm]{Image/FDD_Tong_quan.drawio.png}
     \caption{Sơ đồ phân rã chức năng hệ thống TechWiseAI}
-    \label{fig:fdd-tong-quan}
+    \label{fig:fdd_techwiseai}
 \end{figure}
 
 \subsection{Sơ đồ Use Case tổng quát}
+Sơ đồ Use Case tổng quát mô tả mối quan hệ giữa các tác nhân bên ngoài và những chức năng mà hệ thống thương mại điện tử TechWiseAI cung cấp. Sơ đồ giúp xác định phạm vi hoạt động của hệ thống, quyền tương tác của từng tác nhân và các chức năng chính cần triển khai.\\\\
+Hệ thống bao gồm bốn tác nhân chính:
 
-Sơ đồ Use Case tổng quát mô tả mối quan hệ giữa các tác nhân và những chức năng chính của hệ thống.
+\begin{itemize}
+    \item \textbf{Khách truy cập (Guest):} Là người dùng chưa đăng nhập vào hệ thống. Tác nhân này có thể đăng ký tài khoản, đăng nhập, xem và tìm kiếm sản phẩm, sử dụng các chức năng AI như tìm kiếm bằng hình ảnh, xem sản phẩm tương tự và tư vấn thông qua chatbot, đồng thời xem các tin tức được đăng tải trên hệ thống.
+    \item \textbf{Khách hàng (Customer):} Là người dùng đã đăng nhập và có quyền sử dụng các chức năng dành cho khách hàng như quản lý hồ sơ cá nhân, so sánh sản phẩm, đánh giá sản phẩm, quản lý danh sách yêu thích, giỏ hàng, đặt hàng, thanh toán và theo dõi hoặc hủy đơn hàng.
+    \item \textbf{Quản trị viên (Administrator):} Là tác nhân chịu trách nhiệm quản lý và vận hành hệ thống. Các chức năng bao gồm thống kê kho hàng, quản lý sản phẩm và hình ảnh, quản lý danh mục, đơn hàng, người dùng, kiểm duyệt đánh giá và quản lý bài viết, blog.
+    \item \textbf{VNPay Sandbox:} Là hệ thống bên ngoài tham gia vào quá trình thanh toán trực tuyến. Tác nhân này tương tác với chức năng thanh toán đơn hàng để hỗ trợ xử lý giao dịch thông qua cổng thanh toán VNPay.
+\end{itemize}
 
-TechWiseAI gồm ba tác nhân người dùng: khách truy cập (Guest), khách hàng (Customer) và quản trị viên (Administrator). Khách truy cập sử dụng các chức năng công khai; khách hàng được bổ sung các chức năng mua sắm và quản lý tài khoản; quản trị viên thực hiện các nghiệp vụ quản lý hệ thống. Ngoài ra, VNPay Sandbox tham gia vào quá trình thanh toán trực tuyến.
-
+Các chức năng được phân quyền dựa trên vai trò của từng tác nhân nhằm đảm bảo người dùng chỉ có thể thực hiện những nghiệp vụ phù hợp. Khách truy cập chủ yếu khai thác các chức năng công khai, khách hàng được bổ sung các nghiệp vụ mua sắm và quản lý thông tin cá nhân, trong khi quản trị viên có quyền thực hiện các chức năng quản lý hệ thống.\\\\
+Sơ đồ Use Case tổng quát là cơ sở để tiếp tục phân rã các nhóm chức năng thành những Use Case chi tiết, phục vụ quá trình đặc tả yêu cầu và thiết kế hệ thống.
+    
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Image/UC-00_Use_Case_Tong_Quat_Chinh_Sua.drawio.png}
@@ -597,10 +737,16 @@ TechWiseAI gồm ba tác nhân người dùng: khách truy cập (Guest), khách
 \end{figure}
 
 \subsection{Phân tích chức năng xác thực và quản lý tài khoản}
+Sơ đồ Use Case xác thực và tài khoản mô tả các chức năng liên quan đến việc đăng ký, đăng nhập và quản lý thông tin tài khoản người dùng trong hệ thống TechWiseAI.\\\\
+Các tác nhân tham gia bao gồm:
 
-Nhóm chức năng này hỗ trợ đăng ký, đăng nhập, khôi phục mật khẩu và quản lý hồ sơ cá nhân.
+\begin{itemize}
+    \item \textbf{Khách truy cập (Guest):} Có thể thực hiện đăng ký tài khoản, đăng nhập và sử dụng chức năng quên hoặc đặt lại mật khẩu khi cần thiết.
+    \item \textbf{Khách hàng (Customer):} Là người dùng đã có tài khoản và đăng nhập vào hệ thống. Ngoài các quyền kế thừa từ khách truy cập, khách hàng có thể quản lý hồ sơ cá nhân của mình.
+    \item \textbf{Cloudinary:} Là dịch vụ bên ngoài được tích hợp với chức năng quản lý hồ sơ cá nhân, hỗ trợ xử lý và lưu trữ hình ảnh.
+\end{itemize}
 
-Hệ thống thực hiện kiểm tra thông tin đăng ký, xác thực người dùng bằng JWT và phân quyền truy cập. Khách hàng có thể cập nhật thông tin cá nhân, trong đó hình ảnh hồ sơ có thể được lưu trữ thông qua Cloudinary.
+Nhóm chức năng này đảm bảo người dùng có thể tạo tài khoản, xác thực danh tính và quản lý thông tin cá nhân. Việc phân chia quyền giữa khách truy cập và khách hàng giúp kiểm soát khả năng truy cập các chức năng theo trạng thái đăng nhập.
 
 \begin{figure}[H]
     \centering
@@ -610,10 +756,18 @@ Hệ thống thực hiện kiểm tra thông tin đăng ký, xác thực ngườ
 \end{figure}
 
 \subsection{Phân tích chức năng duyệt và khám phá sản phẩm}
+Sơ đồ Use Case duyệt và khám phá sản phẩm mô tả các chức năng hỗ trợ người dùng tiếp cận, tìm kiếm và xem thông tin sản phẩm trên hệ thống TechWiseAI. Nhóm chức năng này cho phép khách truy cập khám phá danh mục sản phẩm và lựa chọn những sản phẩm phù hợp với nhu cầu.\\\\
+Tác nhân tham gia là \textbf{Khách truy cập (Guest)}, với các chức năng chính sau:
 
-Nhóm chức năng này cho phép người dùng xem trang chủ, chương trình ưu đãi, điều hướng danh mục, lọc, sắp xếp và xem thông tin sản phẩm.
+\begin{itemize}
+    \item \textbf{Xem trang chủ và ưu đãi:} Hiển thị các thông tin tổng quan, sản phẩm nổi bật và chương trình khuyến mãi trên hệ thống.
+    \item \textbf{Điều hướng bằng menu danh mục:} Cho phép người dùng truy cập các nhóm sản phẩm thông qua danh mục được tổ chức trên giao diện.
+    \item \textbf{Lọc và sắp xếp sản phẩm:} Hỗ trợ thu hẹp danh sách sản phẩm theo các tiêu chí như giá, thương hiệu và những thuộc tính liên quan; đồng thời sắp xếp kết quả theo nhu cầu.
+    \item \textbf{Xem nhanh sản phẩm:} Cung cấp thông tin tổng quan về sản phẩm ngay trong quá trình duyệt danh sách, giúp người dùng nhanh chóng tham khảo mà không cần chuyển sang trang chi tiết.
+    \item \textbf{Xem chi tiết sản phẩm:} Hiển thị đầy đủ thông tin về sản phẩm, bao gồm tên, hình ảnh, giá bán, mô tả và thông số kỹ thuật.
+\end{itemize}
 
-Người dùng có thể tìm kiếm sản phẩm thuộc các danh mục như laptop, điện thoại, tai nghe, máy ảnh, linh kiện và phụ kiện. Hệ thống cung cấp thông tin chi tiết về giá bán, hình ảnh, mô tả và thông số kỹ thuật để hỗ trợ quá trình lựa chọn.
+Nhóm chức năng này đóng vai trò là điểm tiếp cận chính giữa người dùng và danh mục sản phẩm của hệ thống. Việc cung cấp các công cụ điều hướng, lọc và hiển thị thông tin giúp nâng cao khả năng tìm kiếm, đồng thời hỗ trợ người dùng đưa ra lựa chọn sản phẩm phù hợp.
 
 \begin{figure}[H]
     \centering
@@ -623,18 +777,26 @@ Người dùng có thể tìm kiếm sản phẩm thuộc các danh mục như l
 \end{figure}
 
 \subsection{Phân tích chức năng dịch vụ trí tuệ nhân tạo}
+Sơ đồ Use Case dịch vụ AI mô tả các chức năng ứng dụng trí tuệ nhân tạo nhằm nâng cao khả năng tìm kiếm, đề xuất và tư vấn sản phẩm trong hệ thống TechWiseAI. Nhóm chức năng này tích hợp các mô hình AI để hỗ trợ người dùng khai thác thông tin sản phẩm một cách linh hoạt hơn.\\
 
-Nhóm chức năng AI gồm ba chức năng chính:
-
+Các tác nhân tham gia bao gồm:
 \begin{itemize}
-    \item \textbf{Tìm kiếm bằng hình ảnh:} Sử dụng mô hình SigLIP để trích xuất đặc trưng hình ảnh và truy xuất các sản phẩm tương đồng.
-
-    \item \textbf{Gợi ý sản phẩm:} Đề xuất sản phẩm tương tự hoặc cá nhân hóa dựa trên đặc trưng sản phẩm và lịch sử tương tác của người dùng.
-
-    \item \textbf{Chatbot tư vấn:} Ứng dụng RAG để truy xuất thông tin sản phẩm và sử dụng mô hình ngôn ngữ tạo câu trả lời phù hợp với nhu cầu.
+    \item \textbf{Khách truy cập (Guest):} Có thể sử dụng các chức năng tìm kiếm sản phẩm bằng hình ảnh, xem các sản phẩm tương tự và tư vấn cấu hình thông qua chatbot.
+    \item \textbf{Hệ thống (tự động):} Thực hiện quản lý vector embedding, phục vụ quá trình chuyển đổi, lưu trữ và cập nhật dữ liệu vector dùng cho truy xuất thông tin.
+    \item \textbf{AI Service (SigLIP):} Là dịch vụ AI hỗ trợ xử lý hình ảnh và tìm kiếm sản phẩm dựa trên nội dung hình ảnh đầu vào.
+    \item \textbf{Google Gemini (LLM):} Cung cấp mô hình ngôn ngữ lớn thông qua API, hỗ trợ xử lý yêu cầu và sinh câu trả lời cho chức năng đề xuất sản phẩm tương tự và tư vấn cấu hình qua chatbot.
 \end{itemize}
 
-Ngoài ra, hệ thống thực hiện tạo và cập nhật vector embedding để phục vụ các chức năng truy xuất dữ liệu AI.
+Các chức năng chính của nhóm dịch vụ AI bao gồm:
+
+\begin{itemize}
+    \item \textbf{Tìm kiếm sản phẩm bằng hình ảnh:} Cho phép người dùng cung cấp hình ảnh để hệ thống phân tích và tìm kiếm những sản phẩm có đặc điểm hình ảnh tương đồng. Chức năng này sử dụng AI Service (SigLIP) để hỗ trợ xử lý và biểu diễn đặc trưng hình ảnh.
+    \item \textbf{Đề xuất sản phẩm tương tự:} Phân tích thông tin sản phẩm và sử dụng mô hình AI để tìm kiếm, đề xuất những sản phẩm có đặc điểm hoặc cấu hình tương đồng.
+    \item \textbf{Quản lý vector embedding:} Thực hiện quản lý các vector biểu diễn dữ liệu sản phẩm, phục vụ hoạt động lưu trữ và truy xuất thông tin trong hệ thống.
+    \item \textbf{Tư vấn cấu hình qua chatbot:} Tiếp nhận yêu cầu của người dùng, khai thác thông tin sản phẩm và sử dụng mô hình ngôn ngữ lớn để tạo ra câu trả lời phù hợp với nhu cầu tư vấn.
+\end{itemize}
+
+Việc tích hợp các dịch vụ AI giúp mở rộng phương thức tìm kiếm và tương tác với sản phẩm, đồng thời hỗ trợ người dùng lựa chọn thiết bị phù hợp với nhu cầu sử dụng. Đây cũng là một trong những chức năng nổi bật của TechWiseAI so với hệ thống thương mại điện tử thông thường.
 
 \begin{figure}[H]
     \centering
@@ -644,10 +806,26 @@ Ngoài ra, hệ thống thực hiện tạo và cập nhật vector embedding đ
 \end{figure}
 
 \subsection{Phân tích chức năng tương tác và so sánh sản phẩm}
+Sơ đồ Use Case tương tác và so sánh sản phẩm mô tả các chức năng hỗ trợ người dùng tìm kiếm, đánh giá và tương tác với các sản phẩm trên hệ thống TechWiseAI. Nhóm chức năng này giúp người dùng có thêm thông tin để cân nhắc và lựa chọn sản phẩm phù hợp với nhu cầu.\\
 
-Nhóm chức năng này hỗ trợ tìm kiếm bằng từ khóa, so sánh sản phẩm, đánh giá và quản lý danh sách yêu thích.
+Các tác nhân tham gia bao gồm:
 
-Người dùng có thể so sánh giá bán và thông số kỹ thuật giữa các sản phẩm. Khách hàng đã đăng nhập được phép đánh giá và lưu sản phẩm yêu thích. Dữ liệu tương tác cũng có thể được sử dụng để hỗ trợ hệ thống gợi ý cá nhân hóa.
+\begin{itemize}
+    \item \textbf{Khách truy cập (Guest):} Có thể thực hiện so sánh sản phẩm và tìm kiếm sản phẩm bằng từ khóa.
+    \item \textbf{Khách hàng (Customer):} Ngoài các chức năng được kế thừa từ khách truy cập, khách hàng có thể đánh giá sản phẩm và quản lý danh sách yêu thích.
+    \item \textbf{Cloudinary:} Là dịch vụ bên ngoài được tích hợp với chức năng đánh giá sản phẩm, hỗ trợ xử lý và lưu trữ hình ảnh.
+\end{itemize}
+
+Các chức năng chính của nhóm này bao gồm:
+
+\begin{itemize}
+    \item \textbf{So sánh sản phẩm:} Cho phép người dùng lựa chọn nhiều sản phẩm để đối chiếu các thông tin như giá bán, cấu hình và thông số kỹ thuật, từ đó hỗ trợ đưa ra quyết định mua sắm.
+    \item \textbf{Đánh giá sản phẩm:} Cho phép khách hàng gửi nhận xét và đánh giá về sản phẩm sau khi sử dụng, góp phần cung cấp thông tin tham khảo cho những người mua khác.
+    \item \textbf{Danh sách yêu thích:} Hỗ trợ khách hàng lưu lại những sản phẩm quan tâm để thuận tiện cho việc theo dõi và lựa chọn trong những lần truy cập tiếp theo.
+    \item \textbf{Tìm kiếm bằng từ khóa:} Cho phép người dùng nhập từ khóa để tìm kiếm sản phẩm theo tên, thương hiệu hoặc những thông tin liên quan.
+\end{itemize}
+
+Nhóm chức năng này góp phần tăng khả năng tương tác giữa người dùng và hệ thống, đồng thời cung cấp thêm thông tin hỗ trợ quá trình đánh giá và lựa chọn sản phẩm. Qua đó, nâng cao trải nghiệm mua sắm trên nền tảng TechWiseAI.
 
 \begin{figure}[H]
     \centering
@@ -657,10 +835,25 @@ Người dùng có thể so sánh giá bán và thông số kỹ thuật giữa 
 \end{figure}
 
 \subsection{Phân tích chức năng giỏ hàng và thanh toán}
+Sơ đồ Use Case giỏ hàng và thanh toán mô tả các chức năng hỗ trợ khách hàng thực hiện quy trình mua sắm trên hệ thống TechWiseAI, từ việc quản lý sản phẩm trong giỏ hàng đến đặt hàng, thanh toán và theo dõi đơn hàng.\\
 
-Nhóm chức năng này cho phép khách hàng quản lý giỏ hàng, đặt hàng, thanh toán, xem lịch sử và hủy đơn hàng theo điều kiện cho phép.
+Các tác nhân tham gia bao gồm:
 
-Hệ thống hỗ trợ thanh toán khi nhận hàng (COD) và thanh toán trực tuyến qua VNPay Sandbox. Đối với VNPay, kết quả giao dịch cần được xác minh trước khi cập nhật trạng thái thanh toán và đơn hàng.
+\begin{itemize}
+    \item \textbf{Khách hàng (Customer):} Là tác nhân chính thực hiện các nghiệp vụ mua sắm, bao gồm quản lý giỏ hàng, đặt hàng, thanh toán và xem lịch sử hoặc hủy đơn hàng.
+    \item \textbf{VNPay Sandbox:} Là hệ thống thanh toán bên ngoài, hỗ trợ xử lý giao dịch trực tuyến thông qua phương thức thanh toán VNPay.
+\end{itemize}
+
+Các chức năng chính của nhóm này bao gồm:
+
+\begin{itemize}
+    \item \textbf{Quản lý giỏ hàng:} Cho phép khách hàng thêm sản phẩm vào giỏ hàng, cập nhật số lượng hoặc loại bỏ sản phẩm trước khi tiến hành đặt hàng.
+    \item \textbf{Đặt hàng:} Tiếp nhận thông tin sản phẩm và thông tin giao hàng, cho phép khách hàng xác nhận đơn hàng trước khi hoàn tất quá trình mua sắm.
+    \item \textbf{Thanh toán (COD / VNPay):} Hỗ trợ hai phương thức thanh toán. Với COD, khách hàng thanh toán khi nhận hàng; với VNPay, hệ thống chuyển tiếp giao dịch đến cổng thanh toán để thực hiện thanh toán trực tuyến.
+    \item \textbf{Xem lịch sử và hủy đơn hàng:} Cho phép khách hàng theo dõi các đơn hàng đã đặt, xem trạng thái xử lý và thực hiện yêu cầu hủy đơn khi đáp ứng các điều kiện của hệ thống.
+\end{itemize}
+
+Nhóm chức năng này đảm bảo các nghiệp vụ mua sắm được thực hiện xuyên suốt, đồng thời tích hợp cổng thanh toán VNPay nhằm cung cấp thêm lựa chọn thanh toán trực tuyến. Việc quản lý lịch sử và trạng thái đơn hàng cũng giúp khách hàng thuận tiện theo dõi quá trình xử lý đơn hàng.
 
 \begin{figure}[H]
     \centering
@@ -670,10 +863,16 @@ Hệ thống hỗ trợ thanh toán khi nhận hàng (COD) và thanh toán trự
 \end{figure}
 
 \subsection{Phân tích chức năng tin tức và bài viết}
+Sơ đồ Use Case tin tức và bài viết mô tả các chức năng cung cấp thông tin và nội dung bài viết trên hệ thống TechWiseAI. Nhóm chức năng này giúp người dùng tiếp cận các tin tức liên quan đến sản phẩm, công nghệ và những nội dung được đăng tải trên nền tảng.\\
 
-Nhóm chức năng tin tức cho phép người dùng xem danh sách và nội dung chi tiết các bài viết được công khai trên website.
+Tác nhân tham gia là \textbf{Khách truy cập (Guest)}, với hai chức năng chính:
 
-Hệ thống hiển thị những thông tin như tiêu đề, hình ảnh đại diện, nội dung và thời gian đăng tải, giúp người dùng tiếp cận các thông tin tham khảo về sản phẩm công nghệ.
+\begin{itemize}
+    \item \textbf{Xem danh sách tin tức:} Cho phép người dùng truy cập và xem danh sách các tin tức, bài viết được hiển thị trên hệ thống.
+    \item \textbf{Xem chi tiết bài viết:} Cung cấp nội dung đầy đủ của một bài viết được lựa chọn, bao gồm tiêu đề, hình ảnh và nội dung chi tiết.
+\end{itemize}
+
+Nhóm chức năng này giúp người dùng dễ dàng cập nhật thông tin và tìm hiểu các nội dung liên quan đến lĩnh vực công nghệ. Đồng thời, việc tổ chức nội dung thành danh sách và trang chi tiết giúp nâng cao khả năng tiếp cận thông tin trên hệ thống.
 
 \begin{figure}[H]
     \centering
@@ -683,10 +882,29 @@ Hệ thống hiển thị những thông tin như tiêu đề, hình ảnh đạ
 \end{figure}
 
 \subsection{Phân tích chức năng quản trị hệ thống}
+Sơ đồ Use Case quản trị hệ thống mô tả các chức năng dành cho quản trị viên nhằm quản lý, giám sát và duy trì hoạt động của hệ thống thương mại điện tử TechWiseAI. Nhóm chức năng này cho phép quản trị viên kiểm soát dữ liệu và thực hiện các nghiệp vụ quản lý trong quá trình vận hành hệ thống.\\
 
-Nhóm chức năng quản trị dành cho Administrator, bao gồm thống kê kho hàng, quản lý sản phẩm, hình ảnh, danh mục, đơn hàng, người dùng, đánh giá và bài viết.
+Các tác nhân tham gia bao gồm:
 
-Quản trị viên có thể thêm, cập nhật và quản lý dữ liệu sản phẩm; theo dõi trạng thái đơn hàng; kiểm duyệt đánh giá và quản lý nội dung website. Hình ảnh sản phẩm được quản lý thông qua dịch vụ Cloudinary.
+\begin{itemize}
+    \item \textbf{Quản trị viên (Administrator):} Là tác nhân chính, có quyền truy cập và thực hiện các chức năng quản lý, thống kê và kiểm soát hoạt động của hệ thống.
+    \item \textbf{Cloudinary:} Là dịch vụ bên ngoài được tích hợp để hỗ trợ lưu trữ và quản lý hình ảnh sản phẩm.
+\end{itemize}
+
+Các chức năng chính của nhóm quản trị hệ thống bao gồm:
+
+\begin{itemize}
+    \item \textbf{Xem thống kê:} Cung cấp thông tin tổng quan về tình hình hoạt động của hệ thống, hỗ trợ quản trị viên theo dõi dữ liệu và hoạt động kinh doanh.
+    \item \textbf{Quản lý sản phẩm:} Cho phép thêm mới, chỉnh sửa, cập nhật và xóa thông tin sản phẩm trong cơ sở dữ liệu.
+    \item \textbf{Quản lý hình ảnh:} Hỗ trợ tải lên, cập nhật và quản lý hình ảnh sản phẩm thông qua dịch vụ lưu trữ Cloudinary.
+    \item \textbf{Quản lý danh mục:} Cho phép tạo mới, chỉnh sửa và xóa các danh mục sản phẩm nhằm tổ chức dữ liệu một cách hợp lý.
+    \item \textbf{Quản lý đơn hàng:} Hỗ trợ quản trị viên theo dõi thông tin, kiểm tra trạng thái và cập nhật quá trình xử lý đơn hàng.
+    \item \textbf{Quản lý người dùng:} Cung cấp chức năng xem và quản lý thông tin tài khoản người dùng trong hệ thống.
+    \item \textbf{Kiểm duyệt đánh giá:} Cho phép quản trị viên xem xét và xử lý các đánh giá của khách hàng nhằm đảm bảo nội dung phù hợp với quy định của hệ thống.
+    \item \textbf{Quản lý bài viết, blog:} Hỗ trợ tạo mới, chỉnh sửa, cập nhật và xóa các bài viết, tin tức được đăng tải trên hệ thống.
+\end{itemize}
+
+Nhóm chức năng quản trị đóng vai trò quan trọng trong việc đảm bảo hệ thống hoạt động ổn định và dữ liệu được quản lý nhất quán. Thông qua các chức năng thống kê và quản lý tập trung, quản trị viên có thể kiểm soát các nghiệp vụ và duy trì chất lượng hoạt động của nền tảng TechWiseAI.
 
 \begin{figure}[H]
     \centering
@@ -1113,7 +1331,7 @@ Các bảng dữ liệu được tổ chức thành những nhóm chính gồm: 
 Sơ đồ thực thể -- liên kết (Entity Relationship Diagram -- ERD) mô tả cấu trúc các bảng, thuộc tính, khóa chính, khóa ngoại và mối quan hệ giữa các thực thể trong hệ thống.\\\\
 Trong TechWiseAI, bảng \texttt{products} giữ vai trò trung tâm, liên kết với danh mục, hình ảnh, giỏ hàng, đơn hàng, đánh giá và dữ liệu embedding. Bảng \texttt{users} liên kết với các dữ liệu tài khoản, đơn hàng, tương tác và hồ sơ sở thích người dùng.\\\\
 Các quan hệ một -- nhiều được biểu diễn thông qua khóa ngoại. Đối với quan hệ nhiều -- nhiều, hệ thống sử dụng các bảng trung gian như \texttt{user\_roles}, \texttt{favorites} và \texttt{blog\_category\_mappings}.
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[
         width=\textwidth,
@@ -1210,13 +1428,38 @@ truy xuất dữ liệu sản phẩm với mô hình ngôn ngữ lớn
 để tạo câu trả lời phù hợp với nhu cầu người dùng.
 
 \subsubsection{Sơ đồ Use Case}
-Sơ đồ Use Case mô tả các chức năng của module
-với hai tác nhân chính là người dùng và quản trị viên.\\\\
-Người dùng có thể gửi câu hỏi tư vấn, tiếp tục hội thoại,
-nhận câu trả lời, xem sản phẩm được đề xuất và truy cập
-thông tin chi tiết sản phẩm. Quản trị viên thực hiện
-quản lý dữ liệu RAG, cập nhật thông tin sản phẩm,
-quản lý embedding và kiểm tra trạng thái dữ liệu.
+Sơ đồ Use Case hệ thống Chatbot RAG mô tả các chức năng tư vấn sản phẩm dựa trên kỹ thuật Retrieval-Augmented Generation (RAG) và các nghiệp vụ quản lý dữ liệu phục vụ quá trình truy xuất thông tin. Hệ thống cho phép người dùng tương tác với chatbot để nhận tư vấn, đồng thời hỗ trợ quản trị viên cập nhật và kiểm soát nguồn dữ liệu được sử dụng.\\
+
+Các tác nhân tham gia bao gồm:
+
+\begin{itemize}
+    \item \textbf{Người dùng:} Là tác nhân trực tiếp tương tác với chatbot, có thể gửi câu hỏi tư vấn, tiếp tục hội thoại, nhận câu trả lời theo thời gian thực, xem các sản phẩm được đề xuất và truy cập thông tin chi tiết sản phẩm.
+    \item \textbf{Quản trị viên:} Chịu trách nhiệm quản lý dữ liệu phục vụ hệ thống RAG, bao gồm cập nhật dữ liệu sản phẩm, tạo và cập nhật vector embedding, kiểm tra trạng thái dữ liệu nhằm đảm bảo nguồn dữ liệu phục vụ truy xuất được duy trì.
+\end{itemize}
+
+Các chức năng chính của hệ thống được chia thành hai nhóm:
+
+\textbf{Nhóm chức năng dành cho người dùng:}
+
+\begin{itemize}
+    \item \textbf{Gửi câu hỏi tư vấn:} Cho phép người dùng nhập yêu cầu về sản phẩm, nhu cầu sử dụng hoặc ngân sách để hệ thống tiếp nhận và xử lý.
+    \item \textbf{Tiếp tục hội thoại:} Hỗ trợ người dùng gửi các câu hỏi tiếp theo trong cùng một phiên trò chuyện, giúp duy trì ngữ cảnh của cuộc hội thoại.
+    \item \textbf{Nhận câu trả lời theo thời gian thực:} Hệ thống truy xuất thông tin liên quan từ nguồn dữ liệu sản phẩm, kết hợp với mô hình ngôn ngữ lớn Gemini để tạo câu trả lời. Nội dung phản hồi được truyền theo cơ chế Streaming, giúp người dùng nhận kết quả ngay trong quá trình sinh văn bản.
+    \item \textbf{Xem sản phẩm được đề xuất:} Hiển thị danh sách sản phẩm phù hợp với yêu cầu tư vấn dựa trên thông tin được truy xuất và xử lý bởi hệ thống RAG.
+    \item \textbf{Xem chi tiết sản phẩm:} Cho phép người dùng truy cập trang thông tin chi tiết của sản phẩm được đề xuất để tìm hiểu thêm về giá bán, cấu hình và các thông số kỹ thuật.
+\end{itemize}
+
+\textbf{Nhóm chức năng dành cho quản trị viên:}
+
+\begin{itemize}
+    \item \textbf{Quản lý dữ liệu RAG:} Cung cấp các chức năng quản lý nguồn dữ liệu đầu vào phục vụ quá trình truy xuất thông tin của chatbot.
+    \item \textbf{Cập nhật dữ liệu sản phẩm:} Thực hiện bổ sung và cập nhật thông tin sản phẩm nhằm đảm bảo dữ liệu sử dụng trong hệ thống RAG phù hợp với dữ liệu sản phẩm hiện tại.
+    \item \textbf{Tạo và cập nhật embedding:} Chuyển đổi dữ liệu sản phẩm thành vector embedding và cập nhật vào cơ sở dữ liệu vector, phục vụ quá trình tìm kiếm ngữ nghĩa.
+    \item \textbf{Kiểm tra trạng thái dữ liệu RAG:} Hỗ trợ theo dõi tình trạng dữ liệu, kiểm tra quá trình cập nhật và trạng thái vector embedding trong hệ thống.
+\end{itemize}
+
+Thông qua việc kết hợp các chức năng tư vấn và quản lý dữ liệu, hệ thống Chatbot RAG giúp người dùng khai thác thông tin sản phẩm một cách thuận tiện hơn. Đồng thời, các chức năng quản trị dữ liệu góp phần duy trì tính cập nhật và độ tin cậy của thông tin được sử dụng trong quá trình sinh câu trả lời.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]
@@ -1226,19 +1469,33 @@ quản lý embedding và kiểm tra trạng thái dữ liệu.
 \end{figure}
 
 \subsubsection{Sơ đồ kiến trúc}
-Module chatbot RAG gồm các thành phần Query Analyzer,
-Embedding Model, Hybrid Retrieval, Context Builder
-và LLM Generator.\\\\
-Query Analyzer phân tích yêu cầu để xác định danh mục,
-thương hiệu và khoảng giá. Mô hình BAAI/bge-m3
-chuyển đổi truy vấn thành vector 1024 chiều.
-Hybrid Retrieval kết hợp tìm kiếm từ khóa và tìm kiếm
-ngữ nghĩa trên PostgreSQL/pgvector, sau đó tổng hợp
-kết quả bằng thuật toán Reciprocal Rank Fusion (RRF).\\\\
-Thông tin sản phẩm được sử dụng để xây dựng ngữ cảnh
-cho mô hình ngôn ngữ sinh câu trả lời.
-Kết quả được truyền theo cơ chế streaming
-đến giao diện người dùng thông qua Spring Boot.
+Module Chatbot RAG của hệ thống TechWiseAI được thiết kế theo kiến trúc phân lớp, tách biệt giữa giao diện người dùng, xử lý nghiệp vụ, dịch vụ truy xuất và sinh câu trả lời. Kiến trúc này giúp phân chia rõ trách nhiệm giữa các thành phần, thuận tiện cho việc bảo trì và mở rộng hệ thống.\\
+
+Các thành phần chính trong kiến trúc bao gồm:
+
+\begin{itemize}
+    \item \textbf{Next.js Frontend:} Cung cấp giao diện trò chuyện, cho phép người dùng nhập câu hỏi và hiển thị nội dung phản hồi. Ngoài ra, giao diện hỗ trợ hiển thị kết quả streaming và liên kết đến các sản phẩm được đề xuất.
+    \item \textbf{Spring Boot Backend:} Đóng vai trò trung gian giữa frontend và dịch vụ RAG. Thành phần này tiếp nhận yêu cầu từ người dùng, kiểm soát truy cập API và chuyển tiếp dữ liệu đến FastAPI. Đồng thời, Spring Boot tiếp nhận và chuyển tiếp luồng phản hồi SSE về frontend.
+    \item \textbf{FastAPI RAG Service:} Là thành phần điều phối toàn bộ pipeline RAG, bao gồm phân tích câu hỏi, tạo embedding, truy xuất dữ liệu, tổng hợp kết quả và gọi mô hình ngôn ngữ lớn để sinh câu trả lời.
+    \item \textbf{Query Analyzer:} Phân tích câu hỏi nhằm xác định các điều kiện tìm kiếm như danh mục sản phẩm, thương hiệu và khoảng giá. Các thông tin này được sử dụng để chuẩn hóa truy vấn trước khi thực hiện tìm kiếm.
+    \item \textbf{BGE-M3 (Local):} Mô hình embedding được triển khai cục bộ, có nhiệm vụ chuyển đổi truy vấn thành vector biểu diễn ngữ nghĩa với số chiều 1024, phục vụ quá trình tìm kiếm ngữ nghĩa.
+    \item \textbf{Hybrid Retrieval:} Kết hợp tìm kiếm từ khóa (Keyword Search) và tìm kiếm ngữ nghĩa (Semantic Search). Kết quả từ hai phương pháp được hợp nhất bằng thuật toán Reciprocal Rank Fusion (RRF) nhằm lựa chọn các sản phẩm có mức độ liên quan cao.
+    \item \textbf{PostgreSQL và pgvector:} Lưu trữ thông tin sản phẩm, nội dung tài liệu RAG (\texttt{rag\_document}) và vector embedding (\texttt{rag\_embedding}). Thành phần này hỗ trợ truy vấn dữ liệu sản phẩm, lọc theo metadata và tìm kiếm vector.
+    \item \textbf{LLM Generator (Google Gemini):} Tiếp nhận câu hỏi cùng ngữ cảnh và kết quả truy xuất để sinh câu trả lời. Nội dung phản hồi được tạo theo cơ chế streaming nhằm truyền dữ liệu từng phần đến người dùng.
+\end{itemize}
+
+\textbf{Quy trình xử lý câu hỏi:}
+
+Khi người dùng gửi câu hỏi, yêu cầu được tiếp nhận tại Next.js Frontend và chuyển đến Spring Boot Backend thông qua HTTP/SSE. Spring Boot tiếp tục chuyển tiếp yêu cầu đến FastAPI RAG Service để thực hiện pipeline xử lý.\\
+
+Tại FastAPI, Query Analyzer phân tích câu hỏi và xác định các điều kiện tìm kiếm cần thiết. Sau đó, truy vấn được chuyển đổi thành vector embedding thông qua mô hình BGE-M3. Vector này được sử dụng kết hợp với tìm kiếm từ khóa trong quá trình Hybrid Retrieval.\\
+
+Hybrid Retrieval thực hiện truy vấn PostgreSQL và pgvector để lấy các sản phẩm phù hợp. Kết quả từ các phương pháp tìm kiếm được tổng hợp bằng RRF, sau đó kết hợp với ngữ cảnh liên quan để cung cấp cho mô hình Gemini.\\
+
+Cuối cùng, Gemini sinh câu trả lời dựa trên câu hỏi và dữ liệu được truy xuất. Kết quả được truyền ngược qua FastAPI và Spring Boot bằng cơ chế streaming, sau đó hiển thị từng phần trên giao diện Next.js.\\
+
+Kiến trúc này giúp kết hợp khả năng tìm kiếm chính xác của phương pháp từ khóa với khả năng hiểu ngữ nghĩa của embedding, đồng thời tận dụng mô hình ngôn ngữ lớn để tạo câu trả lời dựa trên dữ liệu sản phẩm thực tế. Việc tách biệt các thành phần cũng giúp hệ thống dễ dàng thay đổi mô hình AI hoặc mở rộng phương pháp truy xuất khi cần thiết.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]
@@ -1247,18 +1504,38 @@ Kết quả được truyền theo cơ chế streaming
     \label{fig:rag-architecture}
 \end{figure}
 
-
 \subsubsection{Sơ đồ tuần tự}
-Sơ đồ tuần tự mô tả quá trình tương tác giữa
-người dùng và các thành phần của hệ thống
-khi thực hiện tư vấn sản phẩm bằng chatbot RAG.
-Sau khi tiếp nhận câu hỏi, hệ thống phân tích
-truy vấn, tạo vector embedding và thực hiện
-tìm kiếm kết hợp. Kết quả được hợp nhất bằng
-thuật toán RRF, sau đó cung cấp ngữ cảnh
-cho mô hình ngôn ngữ để sinh câu trả lời.
-Phản hồi được truyền theo cơ chế streaming
-đến giao diện người dùng.
+Biểu đồ tuần tự mô tả trình tự tương tác giữa các thành phần trong hệ thống Chatbot RAG của TechWiseAI khi người dùng gửi yêu cầu tư vấn sản phẩm. Quá trình xử lý bao gồm các bước tiếp nhận câu hỏi, phân tích truy vấn, truy xuất dữ liệu, sinh câu trả lời và trả kết quả về giao diện người dùng.\\
+
+Các thành phần tham gia trong quá trình xử lý bao gồm:
+
+\begin{itemize}
+    \item \textbf{Người dùng:} Gửi câu hỏi tư vấn và tiếp nhận câu trả lời từ chatbot.
+    \item \textbf{Frontend:} Tiếp nhận nội dung câu hỏi, gửi yêu cầu đến Backend và hiển thị phản hồi theo cơ chế Streaming.
+    \item \textbf{Backend:} Tiếp nhận yêu cầu thông qua API, chuyển tiếp câu hỏi đến AI Service và truyền dữ liệu phản hồi về Frontend.
+    \item \textbf{AI Service:} Điều phối pipeline RAG, thực hiện phân tích truy vấn, tìm kiếm thông tin và kết hợp kết quả để xây dựng ngữ cảnh cho mô hình ngôn ngữ lớn.
+    \item \textbf{BGE-M3:} Chuyển đổi câu hỏi thành vector embedding có 1024 chiều, phục vụ tìm kiếm ngữ nghĩa.
+    \item \textbf{PostgreSQL/pgvector:} Lưu trữ dữ liệu sản phẩm, tài liệu RAG và vector embedding, đồng thời hỗ trợ truy xuất thông tin bằng tìm kiếm từ khóa và tìm kiếm vector.
+    \item \textbf{LLM:} Sử dụng mô hình Google Gemini để sinh câu trả lời dựa trên câu hỏi và ngữ cảnh được cung cấp.
+\end{itemize}
+
+\textbf{Trình tự xử lý:}
+
+\begin{enumerate}
+    \item Người dùng nhập câu hỏi tư vấn trên giao diện Frontend. Frontend gửi yêu cầu đến Backend thông qua API \texttt{POST /api/v1/chat/stream}.
+    \item Backend tiếp nhận yêu cầu và chuyển tiếp nội dung câu hỏi đến AI Service để xử lý.
+    \item AI Service thực hiện phân tích truy vấn và xác định các điều kiện tìm kiếm như danh mục, thương hiệu và khoảng giá.
+    \item Truy vấn sau khi chuẩn hóa được gửi đến BGE-M3 để chuyển đổi thành vector embedding 1024 chiều.
+    \item AI Service thực hiện Hybrid Search, kết hợp tìm kiếm từ khóa và tìm kiếm vector trên PostgreSQL/pgvector để thu thập danh sách sản phẩm ứng viên phù hợp.
+    \item Các kết quả tìm kiếm được tổng hợp bằng thuật toán Reciprocal Rank Fusion (RRF) nhằm hợp nhất thứ hạng và lựa chọn những sản phẩm có mức độ liên quan cao.
+    \item AI Service gửi câu hỏi cùng ngữ cảnh được truy xuất đến mô hình Gemini để sinh câu trả lời.
+    \item Gemini tạo nội dung phản hồi theo cơ chế Streaming. AI Service tiếp nhận và chuyển từng phần kết quả về Backend, sau đó Backend tiếp tục truyền dữ liệu đến Frontend.
+    \item Frontend hiển thị nội dung câu trả lời theo thời gian thực. Sau khi hoàn tất quá trình xử lý, Backend tiếp nhận danh sách sản phẩm được đề xuất và trả thông tin sản phẩm về Frontend để hiển thị.
+    \item Người dùng có thể lựa chọn sản phẩm được gợi ý để truy cập trang chi tiết và xem thêm thông tin.
+\end{enumerate}
+
+Thông qua cơ chế xử lý tuần tự kết hợp Streaming, hệ thống giúp giảm thời gian chờ hiển thị phản hồi, đồng thời cung cấp các sản phẩm phù hợp với nhu cầu tư vấn. Việc kết hợp tìm kiếm từ khóa và tìm kiếm ngữ nghĩa giúp cải thiện khả năng truy xuất, trong khi Gemini đảm nhiệm việc tổng hợp thông tin và sinh câu trả lời dựa trên ngữ cảnh được cung cấp.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]
